@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------
+//
+//  FUNCTIONS
+//  Creates the functions used in the styles.
+//  Make sure you know what you're doing before altering this code.
+//
+//  - Visibility
+//  - Position
+//  - Size
+//  - Mason
+//
+// ----------------------------------------------------------------------
+
+// ----------------------------------------------------
+// Visibility
+// ----------------------------------------------------
+=responsive-visibility($class)
+  .visible-#{$class}
+    display: block
+  //content: #{$class}
+  table.visible-#{$class},
+  tr.visible-#{$class},
+    display: table
+    display: table-row
+  th.visible-#{$class},
+  td.visible-#{$class}
+    display: table-cell
+  span.visible-#{$class},
+  small.visible-#{$class}
+    display: block
+  a.visible-#{$class}
+    display: inline-block
+
+=responsive-invisibility($class)
+  $mediaclasses: mini phone tablet desktop
+  @each $item in $mediaclasses
+    @if $item != $class
+      .visible-#{$item}
+        display: none
+
+// ----------------------------------------------------
+// Position
+// ----------------------------------------------------
+=pos($pos: absolute, $top: 0, $left: 0, $bottom: 0, $right: 0)
+  position: $pos
+  top: $top
+  left: $left
+  bottom: $bottom
+  right: $right
+
+// ----------------------------------------------------
+// Size
+// ----------------------------------------------------
+=size($height: auto, $width: auto)
+  height: $height
+  width: $width
+
+
+// ----------------------------------------------------
+// Mason
+// ----------------------------------------------------
+=mason($count)
+  -moz-column-count: $count
+  -webkit-column-count: $count
+  column-count: $count
