@@ -1,0 +1,35 @@
+{
+  "name": "grade",
+  "version": "1.0.0",
+  "description": "A flexbox grid for humans.",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp": "^3.9.0",
+    "jshint": "^2.9.1",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/elvessousa/grade.git"
+  },
+  "keywords": [
+    "grid",
+    "flexbox",
+    "sass",
+    "css"
+  ],
+  "author": "Elves Sousa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elvessousa/grade/issues"
+  },
+  "homepage": "https://github.com/elvessousa/grade#readme"
+}
