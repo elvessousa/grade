@@ -1,0 +1,316 @@
+/* -----------------------------------------------------------------------
+  GRID
+  Creates the grid classes and utilities.
+  Make sure you know what you're doing before altering this code.
+
+  - Variables
+  - Container
+  - Direction
+  - Alignment
+  - Columns
+  - Widths for desktop
+  - Widths for mobile
+
+  ---------------------------------------------------------------------- */
+@import "gridvars"
+
+.grid
+  img
+    max-width: 100%
+
+  // ----------------------------------------------------
+  // Direction
+  // ----------------------------------------------------
+  .reverse
+    flex-direction: row-reverse
+  .invert
+    flex-direction: column-reverse
+
+  // ----------------------------------------------------
+  // Alignment
+  // ----------------------------------------------------
+  .stretch,
+  .justify
+    justify-content: space-between
+  .distribute
+    justify-content: space-around
+  .fill
+    align-self: stretch
+  .to-left
+    margin-right: auto !important
+  .to-right
+    margin-left: auto !important
+  .to-top
+    align-self: flex-start
+  .to-bottom
+    align-self: flex-end
+  .center
+    &.vertical
+      align-self: center
+    &.horizontal
+      margin: auto
+    &.all
+      display: flex
+      justify-content: center
+      align-items: center
+
+  // For devices
+  @for $i from 0 to length($medias)
+    $query: unquote(nth($queries, $i+1))
+    $media: unquote(nth($medias, $i+1))
+
+    @media #{$query}
+      .stretch-#{$media},
+      .justify-#{$media}
+        justify-content: space-between
+      .distribute-#{$media}
+        justify-content: space-around
+      .to-left-#{$media}
+        margin-right: auto !important
+      .to-right-#{$media}
+        margin-left: auto !important
+      .to-top-#{$media}
+        align-self: flex-start
+      .to-bottom-#{$media}
+        align-self: flex-end
+      .center-#{$media}
+        &.vertical
+          align-self: center
+        &.horizontal
+          margin: auto
+        &.all
+          display: flex
+          justify-content: center
+          align-items: center
+
+  // ----------------------------------------------------
+  // Masonry
+  // ----------------------------------------------------
+  .#{$mason-slug}
+    .item
+      display: inline-block
+      width: 100%
+      box-sizing: border-box
+      -moz-column-gap: $gutter/2
+      -webkit-column-gap: $gutter/2
+      column-gap: $gutter/2
+      img
+        max-width: 100%
+    &.no-gutter
+      .item
+        -moz-column-gap: 0
+        -webkit-column-gap: 0
+        column-gap: 0
+
+  // ----------------------------------------------------
+  // Columns
+  // ----------------------------------------------------
+  .#{$col-slug}
+    display: flex
+    width: 100%
+    flex-flow: row wrap
+    > *
+      flex: 1 1 0
+      box-sizing: border-box
+    > li
+      list-style: none
+
+  .lines
+    display: flex
+    width: 100%
+    flex-flow: column wrap
+    > *
+      flex: 1 1 0
+      box-sizing: border-box
+    > li
+      list-style: none
+
+  // ----------------------------------------------------
+  // Widths for desktop
+  // ----------------------------------------------------
+  @media #{$desktop}
+    @for $i from 0 to length($numbers)
+      $class: unquote(nth($numbers, $i+1))
+      $fclass: unquote(nth($fraction, $i+1))
+      $width: 100/($i+1)
+      $unit: "%"
+
+      // Visibility
+      +responsive-visibility(desktop)
+      +responsive-invisibility(desktop)
+      .hidden-desktop
+        display: none
+
+      // Ordering
+      .first
+        order: -1
+      .last
+        order: 1
+
+      // Usage: number columns
+      .#{$col-slug}.#{$class} > *
+        flex: 0 0 calc(#{$width}#{$unit} - #{$gutter})
+        margin: $gutter/2
+
+      // Usage: columns > number
+      .#{$col-slug}
+        .#{$fclass}
+          flex: 0 0 calc(#{$width}#{$unit}) !important
+
+      // Usage: number columns stretch
+      .#{$col-slug}.stretch.#{$class} > *
+        flex: calc(#{$width}#{$unit} - #{$gutter})
+
+    @for $i from 0 to length($numbers)
+      $class: unquote(nth($numbers, $i+1))
+      $width: 100/($i+1)
+      $unit: "%"
+
+      // Usage: number columns no-gutter
+      .#{$col-slug}.no-gutter.#{$class} > *
+        flex: 0 0 #{$width}#{$unit}
+        margin: 0
+
+      // Usage: number columns stretch no-gutter
+      .#{$col-slug}.no-gutter.stretch.#{$class} > *
+        flex: calc(#{$width}#{$unit})
+        margin: 0
+
+    // Masonry bricks
+    @for $i from 0 to length($bricks)
+      $mclass: unquote(nth($bricks, $i+1))
+      .mason.#{$mclass}
+        +mason($i+1)
+
+    // Multiplier
+    @for $i from 0 to length($multiply)
+      $eclass: unquote(nth($multiply, $i+1))
+      .#{$eclass}
+        flex: ($i+1) 1
+
+  // ----------------------------------------------------
+  // Widths for mobile
+  // ----------------------------------------------------
+  @for $i from 0 to length($medias)
+    $query: unquote(nth($queries, $i+1))
+    $media: unquote(nth($medias, $i+1))
+
+    @media #{$query}
+      // Visibility
+      +responsive-visibility($media)
+      +responsive-invisibility($media)
+      .hidden-#{$media}
+        display: none !important
+
+      // Ordering
+      .first-#{$media}
+        order: -1
+      .last-#{$media}
+        order: 1
+
+      // Columns
+      @for $i from 0 to length($numbers)
+        $class: unquote(nth($numbers, $i+1))
+        $fclass: unquote(nth($fraction, $i+1))
+        $width: 100/($i+1)
+        $unit: "%"
+
+        // Usage: number columns
+        .#{$col-slug}.#{$class}-#{$media} > *
+          flex: 0 0 calc(#{$width}#{$unit} - #{$gutter})
+          margin: $gutter/2
+
+        // Usage: columns > number
+        .#{$col-slug}
+          .#{$fclass}-#{$media}
+            flex: 0 0 calc(#{$width}#{$unit} - #{$gutter}) !important
+            padding: $gutter/2
+
+        // Usage: number columns stretch
+        .#{$col-slug}.stretch.#{$class}-#{$media} > *
+          flex: calc(#{$width}#{$unit} - #{$gutter})
+          margin: $gutter/2
+
+      // Columns with no gutter
+      @for $i from 0 to length($numbers)
+        $class: unquote(nth($numbers, $i+1))
+        $width: 100/($i+1)
+        $unit: "%"
+
+        // Usage: number columns no-gutter
+        .#{$col-slug}.no-gutter.#{$class}-#{$media} > *
+          flex: 0 0 #{$width}#{$unit}
+          margin: 0
+
+        // Usage: number columns stretch no-gutter
+        .#{$col-slug}.no-gutter.stretch.#{$class}-#{$media} > *
+          flex: calc(#{$width}#{$unit})
+          margin: 0
+
+      // Masonry bricks
+      @for $i from 0 to length($bricks)
+        $mclass: unquote(nth($bricks, $i+1))
+        .mason.#{$mclass}-#{$media}
+          +mason($i+1)
+
+      // Multiplier
+      @for $i from 0 to length($multiply)
+        $eclass: unquote(nth($multiply, $i+1))
+        .#{$eclass}-#{$media}
+          flex: ($i+1) 1
+
+  // ----------------------------------------------------
+  // Container
+  // ----------------------------------------------------
+  .container
+    width: $container-mini
+    padding: 1em
+    &.no-gutter
+      padding: 0
+
+  @media #{$tablet}
+    .container
+      max-width: $container-tablet
+      margin: auto
+      padding: 1em
+
+  @media #{$desktop}
+    .container
+      max-width: $container-desktop
+      margin: auto
+      padding: 1em
+
+  // ----------------------------------------------------
+  // Embed
+  // ----------------------------------------------------
+  .embed
+    position: relative
+    display: block
+    max-width: 100%
+    align-self: center
+    width: 100%
+
+    .item,
+    audio,
+    video,
+    iframe,
+    object
+      +pos()
+      +size(100%, 100%)
+      border: 0
+
+  // ----------------------------------------------------
+  // Proportional formats
+  // ----------------------------------------------------
+  .widescreen
+    padding-bottom: 56.25%
+  .phone
+    padding-bottom: 178.5%
+  .sd
+    padding-bottom: 75%
+  .square
+    padding-bottom: 100%
+  .cinema-wide
+    padding-bottom: 43%
+  .anamorphic
+    padding-bottom: 41.9%
