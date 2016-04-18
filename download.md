@@ -6,15 +6,22 @@ permalink: /download/
 
 ### Download the files
 This grid is available as a full package containing all the need files to compile.
-It is made **Sass**, but a **precompiled css** is included in the `pub/css` folder.
-To use it, copy to your page and be happy.
+It is made in **Sass**, but a **precompiled css** is included in the `pub/css` folder.
+To use it, copy to your project link it in your page and be happy:
+
+{% highlight html %}
+  <link rel="stylesheet" href="path/to/css/grade.css">
+{% endhighlight %}
+
 
 [**Download zip**](https://github.com/elvessousa/grade/archive/master.zip)
+
+---
 
 ### Using the source code
 
 #### NPM: node package manager
-If you don't have node installed, downloat it from the site, or use a package manager of your choice.
+If you don't have node installed, download it from the site, or use a package manager of your choice.
 
 
 #### Gulp
@@ -30,6 +37,9 @@ To run the task in the gulpfile.js, run:
 {% highlight shell %}
   $ gulp
 {% endhighlight %}
+
+---
+
 
 ### Install
 In order to install and run, check if all dependencies are satisfied.

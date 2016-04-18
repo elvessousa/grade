@@ -14,55 +14,55 @@ What would it be like in the current frameworks available out there?
 Look at it:
 
 {% highlight html %}
-  <div class="row">
-    <div class="your-class col-xs-12 col-md-3 col-sm-3 col-lg-3">
-      <!-- Your content goes here -->
-    </div>
-    <div class="your-class col-xs-12 col-md-3 col-sm-3 col-lg-3">
-      <!-- Your content goes here -->
-    </div>
-    <div class="your-class col-xs-12 col-md-3 col-sm-3 col-lg-3">
-      <!-- Your content goes here -->
-    </div>
-    <div class="your-class col-xs-12 col-md-3 col-sm-3 col-lg-3">
-      <!-- Your content goes here -->
-    </div>
+<div class="row">
+  <div class="your-class col-xs-12 col-md-3 col-sm-3 col-lg-3">
+    <!-- Your content goes here -->
   </div>
+  <div class="your-class col-xs-12 col-md-3 col-sm-3 col-lg-3">
+    <!-- Your content goes here -->
+  </div>
+  <div class="your-class col-xs-12 col-md-3 col-sm-3 col-lg-3">
+    <!-- Your content goes here -->
+  </div>
+  <div class="your-class col-xs-12 col-md-3 col-sm-3 col-lg-3">
+    <!-- Your content goes here -->
+  </div>
+</div>
 {% endhighlight %}
 
 There are a lot of classes on those div's, right?
 
 What if you could write the same code as the example below?
 {% highlight html %}
-  <div class="four columns one-phone">
-    <div class="your-class">
-      <!-- Your content goes here -->
-    </div>
-    <div class="your-class">
-      <!-- Your content goes here -->
-    </div>
-    <div class="your-class">
-      <!-- Your content goes here -->
-    </div>
-    <div class="your-class">
-      <!-- Your content goes here -->
-    </div>
+<div class="four columns one-phone">
+  <div class="your-class">
+    <!-- Your content goes here -->
   </div>
+  <div class="your-class">
+    <!-- Your content goes here -->
+  </div>
+  <div class="your-class">
+    <!-- Your content goes here -->
+  </div>
+  <div class="your-class">
+    <!-- Your content goes here -->
+  </div>
+</div>
 {% endhighlight %}
 
-Much better, huh?
+Much better, huh? That's what it's all about.
 
-#### So will i have to leave my favorite framework to use this?
+#### So will I have to leave my favorite framework to use this?
 Ehh, nope... You can mix it with any framework you already use.
-Why? It will only work if you use the **grid** class in the parent element.
+It only works if you use the **grid** class in the parent element.
 It's unobstrusive.
 
 Like this:
 
 {% highlight html %}
-  <div class="grid">
-    <!-- Your content goes here -->
-  </div>
+<div class="grid">
+  <!-- Your content goes here -->
+</div>
 {% endhighlight %}
 
 {% include snippets.html %}
