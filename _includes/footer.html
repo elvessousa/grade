@@ -1,10 +1,21 @@
 <footer>
   <section class="container columns">
-    <div class="name quarter">
+    <div class="name quarter certer vertical">
       <h4>Grade</h4>
+      <a href=""></a>
     </div>
     <div class="desc">
-      <p>Reprehenderit debitis voluptatem reiciendis dolorum accusantium animi eaque fugiat aliquam perferendis commodi. Sint consectetur voluptates architecto quia laborum, quae vel, ullam maiores.</p>
+      {% assign version = page.language %}
+      {% case version %}
+      {% when 'pt' %}
+      <p>Feito por <a href="http://elvessousa.com.br">Elves Sousa</a> em São Paulo.<br>
+        <a class="language-link" href="{{ site.baseurl }}/">English version</a>
+      </p>
+      {% else %}
+      <p>Made by <a href="http://elvessousa.com.br">Elves Sousa</a> in São Paulo.<br>
+        <a class="language-link" href="{{ site.baseurl }}/pt">Versão em português</a>
+      </p>
+      {% endcase %}
     </div>
   </section>
 </footer>

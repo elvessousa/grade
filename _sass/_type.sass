@@ -15,6 +15,7 @@ a
     family: $title-font
     weight: $base-weight
   text-decoration: none
+  transition: all .5s ease-in-out
 
   header &,
   .full-header &,
@@ -26,6 +27,27 @@ a
     color: $content-link
     &:hover
       color: lighten($content-link, 30%)
+
+  footer &,
+  footer p &,
+    color: $footer-link
+    &:hover
+      color: #fff
+
+a[href$=".zip"]
+  padding: 1em
+  background: #080
+  color: #fff
+  border-radius: 3px
+  display: block
+  margin: 10px auto
+  text-align: center
+  width: 10em
+  max-width: 100%
+  &:hover
+    background: #0a0
+    color: #fff
+
 
 h1, h2, h3, h4
   font:
@@ -86,6 +108,16 @@ img + em
     font-size: 1.618em
     line-height: 1em
 
+.language-link
+  color: #666
+  font-weight: 100
+  &:hover
+    color: #fff
+
+footer
+  .desc
+    text-align: right
+
 @media #{$phone}
   blockquote
     font-size: 1.2em
@@ -109,3 +141,9 @@ img + em
 
   .site-link
     font-size: 1.618em
+
+  footer
+    h4
+      margin: 0
+    .desc
+      text-align: right

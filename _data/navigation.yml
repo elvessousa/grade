@@ -1,0 +1,15 @@
+# Portuguese menu
+pt:
+- links:
+  - name: Iniciando
+    url: /pt/download
+  - name: Grid
+    url: /pt/grid
+
+# English menu
+en:
+- links:
+  - name: Getting started
+    url: /en/download
+  - name: Grid
+    url: /en/grid

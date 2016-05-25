@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Grid
-permalink: /grid/
+permalink: /en/grid/
+language: en
 ---
 
 This is an easy grid to use, quite intuitive, in fact.
@@ -54,15 +55,15 @@ Much better, huh? That's what it's all about.
 
 #### So will I have to leave my favorite framework to use this?
 Ehh, nope... You can mix it with any framework you already use.
-It only works if you use the **grid** class in the parent element.
+It only works if you use the **grade** class in the parent element.
 It's unobstrusive.
 
 Like this:
 
 {% highlight html %}
-<div class="grid">
+<div class="grade">
   <!-- Your content goes here -->
 </div>
 {% endhighlight %}
 
-{% include snippets.html %}
+{% include snippets-br.html %}

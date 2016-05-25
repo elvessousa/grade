@@ -1,15 +1,23 @@
 <header class="site-header">
   <nav class="navigation">
     <div class="container columns">
+      {% assign version = page.language %}
+      {% case version %}
+      {% when 'pt' %}
+      <a class="logo third" href="{{ site.baseurl }}/{{ page.language }}">{{ site.title }}</a>
+      {% else %}
       <a class="logo third" href="{{ site.baseurl }}/">{{ site.title }}</a>
-      <a href="#" class="menu-icon"></a>
-      <div class="links half to-right vertical center hidden-phone hidden-tablet">
-        {% for my_page in site.pages %}
-        {% if my_page.title %}
-        <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-        {% endif %}
+      {% endcase %}
+      <!-- <a href="#" class="menu-icon"></a> -->
+      <nav class="links half to-right vertical center hidden-phone hidden-tablet">
+        {% for nav in site.data.navigation[page.language] %}
+        {% for item in nav.links %}
+        <a class="page-link" href="{{ item.url | prepend: site.baseurl }}">
+          {{ item.name }}
+        </a>
         {% endfor %}
-      </div>
+        {% endfor %}
+      </nav>
     </div>
   </nav>
 </header>

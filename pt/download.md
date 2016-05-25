@@ -1,0 +1,54 @@
+---
+layout: page
+title: Iniciando
+permalink: pt/download/
+language: pt
+---
+
+### Baixe os arquivos
+Esta grid está disponível como um pacote contendo todos os arquivos necessários para compilar.
+É feito em **Sass**, mas uma **folha de estilo precompilada** está incluída no diretório `pub/css`.
+Para usá-la, copie o arquivo para o seu projeto, o referencie na página e seja feliz:
+
+{% highlight html %}
+  <link rel="stylesheet" href="path/to/css/grade.css">
+{% endhighlight %}
+
+
+[**Baixar zip**](https://github.com/elvessousa/grade/archive/master.zip)
+
+---
+
+### Usando o código fonte
+
+#### NPM: node package manager
+Se você não possui o node instalado, baixe-o do site, ou use um gerenciador de pacotes de sua preferência.
+
+#### Gulp
+É um gerenciador de tarefas. Mais informaç˜ies no [site do Gulp](http://gulpjs.com).
+Para instalà-lo no seu sistema, execute:
+
+{% highlight shell %}
+  $ (sudo) npm install -g gulp
+{% endhighlight %}
+
+Para rodar a tarefa do gulpfile.js, execute:
+
+{% highlight shell %}
+  $ gulp
+{% endhighlight %}
+
+---
+
+
+### Instalação
+Para instalar e executar, cheque se todas as dependências estão satisfeitas.
+Se estão, execute o seguinte em um terminal:
+
+{% highlight shell %}
+  $ npm install
+{% endhighlight %}
+
+{% highlight shell %}
+  $ bower install
+{% endhighlight %}

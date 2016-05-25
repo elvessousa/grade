@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Getting started
-permalink: /download/
+permalink: /en/download/
+language: en
 ---
 
 ### Download the files
