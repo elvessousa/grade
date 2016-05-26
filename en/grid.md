@@ -66,4 +66,4 @@ Like this:
 </div>
 {% endhighlight %}
 
-{% include snippets-br.html %}
+{% include snippets.html %}
