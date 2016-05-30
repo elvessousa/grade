@@ -1,6 +1,6 @@
 <header class="site-header">
   <nav class="navigation">
-    <div class="container columns">
+    <div class="container columns one-phone no-gutter">
       {% assign version = page.language %}
       {% case version %}
       {% when 'pt' %}
@@ -9,7 +9,20 @@
       <a class="logo third" href="{{ site.baseurl }}/">{{ site.title }}</a>
       {% endcase %}
       <!-- <a href="#" class="menu-icon"></a> -->
-      <nav class="links half to-right vertical center hidden-phone hidden-tablet">
+      <div class="mobile-menu visible-phone">
+        <input type='checkbox' id='toggle'/>
+        <label for="toggle" class="toggle" onclick>&equiv;</label>
+        <nav class="mobile-links vertical center full-phone">
+          {% for nav in site.data.navigation[page.language] %}
+          {% for item in nav.links %}
+          <a class="mobile-page-link" href="{{ item.url | prepend: site.baseurl }}">
+            {{ item.name }}
+          </a>
+          {% endfor %}
+          {% endfor %}
+        </nav>
+      </div>
+      <nav class="links half to-right vertical center hidden-phone">
         {% for nav in site.data.navigation[page.language] %}
         {% for item in nav.links %}
         <a class="page-link" href="{{ item.url | prepend: site.baseurl }}">
