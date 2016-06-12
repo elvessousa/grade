@@ -3,13 +3,13 @@ pt:
 - links:
   - name: Iniciando
     url: /pt/download
-  - name: Grid
-    url: /pt/grid
+  - name: Documentação
+    url: /pt/docs
 
 # English menu
 en:
 - links:
   - name: Getting started
     url: /en/download
-  - name: Grid
-    url: /en/grid
+  - name: Docs
+    url: /en/docs

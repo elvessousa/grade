@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Grid
-permalink: /en/grid/
+title: Docs
+permalink: /en/docs/
 language: en
 ---
 
