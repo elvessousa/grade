@@ -39,7 +39,7 @@
 <!-- Fixed -->
 <h4>Fixed columns</h4>
 <p>Fixes the number of columns. You can use <code>[number]-[query]</code> to specify a diferent number in another window size.</p>
-<div class="columns three one-phone one-mini">
+<div class="columns three one-phone">
   <div class="content">
     <strong>Column 01</strong>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -55,7 +55,7 @@
 </div>
 <!-- Code -->
 {% highlight html %}
-<div class="columns three one-phone one-mini">
+<div class="columns three one-phone">
   <div class="your-class">
     <strong>Column 01</strong>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -74,7 +74,7 @@
 <!-- Stretch -->
 <h4>Stretch columns</h4>
 <p>In case off an odd number, or lack of columns to fill your layout, you can use this class to extend the remaining columns to fill the gaps.</p>
-<div class="four three-tablet one-mini stretch columns">
+<div class="four three-tablet stretch columns">
   <div class="content">
     <strong>Column 01</strong>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -101,7 +101,7 @@
   </div>
 </div>
 {% highlight html %}
-<div class="four three-tablet one-mini stretch columns">
+<div class="four three-tablet stretch columns">
   <div class="content">
     <strong>Column 01</strong>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -132,7 +132,7 @@
 <!-- Stretch -->
 <h4>Justify columns</h4>
 <p>Justify the columns to use all the space available in the row.</p>
-<div class="four three-tablet one-mini justify columns">
+<div class="four three-tablet justify columns">
   <div class="content">
     <strong>Column 01</strong>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -159,7 +159,7 @@
   </div>
 </div>
 {% highlight html %}
-<div class="four three-tablet one-mini justify columns">
+<div class="four three-tablet justify columns">
   <div class="content">
     <strong>Column 01</strong>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -189,7 +189,7 @@
 
 <h4>Distribute columns</h4>
 <p>Distribute columns evenly in the row.</p>
-<div class="four three-tablet one-mini distribute columns">
+<div class="four three-tablet distribute columns">
   <div class="content">
     <strong>Column 01</strong>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -218,14 +218,14 @@
 
 <!-- Code -->
 {% highlight html %}
-<div class="four three-tablet one-mini distribute columns">
+<div class="four three-tablet distribute columns">
   [your html]
 </div>
 {% endhighlight %}
 <!-- No gutter -->
 <h4>No gutter</h4>
 <p>Sometimes the closer the better.</p>
-<div class="four three-tablet one-mini stretch columns no-gutter">
+<div class="four three-tablet stretch columns no-gutter">
   <div class="content">
     <strong>Column 01</strong>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -253,7 +253,7 @@
 </div>
 <!-- Code -->
 {% highlight html %}
-<div class="four three-tablet one-mini stretch columns no-gutter">
+<div class="four three-tablet stretch columns no-gutter">
   <div class="your-class">
     <strong>Column 01</strong>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -561,10 +561,6 @@
 <p>Hide and show it with class. Literally.</p>
 <div class="grid-demo">
   <div class="columns">
-    <div class="visible-mini">
-      <h1><i class="fa fa-clock-o"></i></h1>
-      <p class="text-center">Visible mini</p>
-    </div>
     <div class="visible-phone">
       <h1><i class="fa fa-mobile"></i></h1>
       <p class="text-center">Visible phone</p>
@@ -579,16 +575,11 @@
     </div>
   </div>
   <div class="columns text-center visibility">
-    <p class="hidden-mini"><i class="fa fa-clock-o"></i> <small>Hidden on mini</small></p>
     <p class="hidden-phone"><i class="fa fa-mobile"></i> <small>Hidden on phones</small></p>
     <p class="hidden-tablet"><i class="fa fa-tablet"></i> <small>Hidden on tablet</small></p>
     <p class="hidden-desktop"><i class="fa fa-desktop"></i> <small>Hidden on desktop</small></p>
   </div>
   {% highlight html %}
-  <div class="visible-mini">
-    <h1><i class="fa fa-clock-o"></i></h1>
-    <p class="text-center">Visible mini</p>
-  </div>
   <div class="visible-phone">
     <h1><i class="fa fa-mobile"></i></h1>
     <p class="text-center">Visible phone</p>
@@ -604,7 +595,6 @@
   {% endhighlight %}
   {% highlight html %}
   <div class="columns text-center visibility">
-    <p class="hidden-mini"><i class="fa fa-clock-o"></i> <small>Hidden on mini</small></p>
     <p class="hidden-phone"><i class="fa fa-mobile"></i> <small>Hidden on phones</small></p>
     <p class="hidden-tablet"><i class="fa fa-tablet"></i> <small>Hidden on tablet</small></p>
     <p class="hidden-desktop"><i class="fa fa-desktop"></i> <small>Hidden on desktop</small></p>
