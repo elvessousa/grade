@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: documentation
 title: Documentação
 permalink: pt/docs/
 language: pt

@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<header class="post-header center all">
+  <h2 class="post-title">{{ page.title }}</h2>
+</header>
+
+<article class="post container">
+  <div class="post-content">
+    <div class="columns">
+      <div class="quarter hidden-phone">
+        <div class="indice">
+        </div>
+      </div>
+      <div class="text">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+
+<script src="../../js/indice.min.js"></script>
+<script>
+  (function(){
+    var toc = new Indice();
+    toc.make(".text h3", ".indice");
+  })();
+</script>
