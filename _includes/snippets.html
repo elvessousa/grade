@@ -609,73 +609,76 @@
 <p>Mostre suas imagens em colunas, sem qualquer javascript.</p>
 <div class="mason four three-tablet two-phone">
   <div class="item">
-    <img src="http://lorempixel.com/400/600/" alt="Image">
+    <img src="../../img/bible.jpeg" alt="Image">
   </div>
   <div class="item">
-    <img src="http://lorempixel.com/400/400/" alt="Image">
+    <img src="../../img/girl.jpeg" alt="Image">
   </div>
   <div class="item">
-    <img src="http://lorempixel.com/300/400/" alt="Image">
+    <img src="../../img/tower.jpeg" alt="Image">
   </div>
   <div class="item">
-    <img src="http://lorempixel.com/400/200/" alt="Image">
+    <img src="../../img/car.jpeg" alt="Image">
   </div>
   <div class="item">
-    <img src="http://lorempixel.com/600/400/" alt="Image">
+    <img src="../../img/rocks.jpeg" alt="Image">
   </div>
   <div class="item">
-    <img src="http://lorempixel.com/400/1000/sports" alt="Image">
+    <img src="../../img/sea.jpeg" alt="Image">
   </div>
   <div class="item">
-    <img src="http://lorempixel.com/600/400/animals" alt="Image">
+    <img src="../../img/building.jpeg" alt="Image">
   </div>
   <div class="item">
-    <img src="http://lorempixel.com/300/500" alt="Image">
+    <img src="../../img/tv.jpeg" alt="Image">
   </div>
 </div>
 {% highlight html %}
 <div class="mason four three-tablet two-phone">
-  [your html here]
+  [seu html aqui]
 </div>
 {% endhighlight %}
 
 <!-- Embeds -->
-<!-- <h3>Embeds</h3>
-<p>Paste your embed, tell the proportion and boom... It just works.</p>
-<div class="mason three two-phone">
-  <div class="item">
-    <h4>Widescreen (16:9)</h4>
-    <div class="embed widescreen">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/KJoP0dJyToo" frameborder="0" allowfullscreen></iframe>
+<!-- Embeds -->
+<section class="container">
+  <h3>Embeds</h3>
+  <p>Paste your embed, tell the proportion and boom... It just works.</p>
+  <div class="mason three two-phone">
+    <div class="item">
+      <h5>Widescreen (16:9)</h5>
+      <div class="embed widescreen">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ia9uXumYrXQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item">
+      <h5>SD (4:3)</h5>
+      <div class="embed sd">
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item">
+      <h5>Phone (9:16)</h5>
+      <div class="embed phone">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fgeracaomonarquia%2Fvideos%2F209006036180794%2F&show_text=0&width=400" width="400" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+      </div>
+    </div>
+    <div class="item">
+      <h5>Cinema (2:35/1)</h5>
+      <div class="embed cinema-wide">
+        <iframe width='640' height='360' src='http://cache.vevo.com/assets/html/embed.html?video=GB1101500747&autoplay=0' frameborder='0' allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="item">
+      <h5>Square (1:1)</h5>
+      <div class="embed square">
+        <iframe src="https://vine.co/v/i15Am1uba61/embed/simple" width="480" height="480" frameborder="0"></iframe><script src="https://platform.vine.co/static/scripts/embed.js"></script>
+      </div>
     </div>
   </div>
-  <div class="item">
-    <h4>SD (4:3)</h4>
-    <div class="embed sd">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-    </div>
+  {% highlight html %}
+  <div class="embed [widescreen | sd | phone | cinema-wide | square]">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KJoP0dJyToo" frameborder="0" allowfullscreen></iframe>
   </div>
-  <div class="item">
-    <h4>Phone (9:16)</h4>
-    <div class="embed phone">
-      <iframe width="420" height="315" src="https://www.youtube.com/embed/8zykfY4WNJ4" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
-  <div class="item">
-    <h4>Cinema (2:35/1)</h4>
-    <div class="embed cinema-wide">
-      <iframe width='640' height='360' src='http://cache.vevo.com/assets/html/embed.html?video=GB1101500747&autoplay=0' frameborder='0' allowfullscreen></iframe>
-    </div>
-  </div>
-  <div class="item">
-    <h4>Square (1:1)</h4>
-    <div class="embed square">
-      <iframe src="https://vine.co/v/i15Am1uba61/embed/simple" width="480" height="480" frameborder="0"></iframe><script src="https://platform.vine.co/static/scripts/embed.js"></script>
-    </div>
-  </div>
-</div>
-{% highlight html %}
-<div class="embed [widescreen | sd | phone | cinema-wide | square]">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/KJoP0dJyToo" frameborder="0" allowfullscreen></iframe>
-</div>
-{% endhighlight %} -->
+  {% endhighlight %}
+</section>
