@@ -1,16 +1,19 @@
-/* -----------------------------------------------------------------------
-  GRID
-  Creates the grid classes and utilities.
-  Make sure you know what you're doing before altering this code.
-  - Variables
-  - Container
-  - Direction
-  - Alignment
-  - Columns
-  - Widths for desktop
-  - Widths for mobile
-  ---------------------------------------------------------------------- */
-
+// -----------------------------------------------------------------------------
+//
+//   GRADE
+//   Creates the grid classes and utilities.
+//   Make sure you know what you're doing before altering this code.
+//
+// -----------------------------------------------------------------------------
+//
+//   - Container
+//   - Direction
+//   - Alignment
+//   - Columns
+//   - Widths for desktop
+//   - Widths for mobile
+//
+// -----------------------------------------------------------------------------
 @import "gridvars"
 
 .grade
@@ -21,9 +24,9 @@
   // Direction
   // ----------------------------------------------------
   .reverse
-    flex-direction: row-reverse
+    flex-direction: row-reverse !important
   .invert
-    flex-direction: column-reverse
+    flex-direction: column-reverse !important
 
   // ----------------------------------------------------
   // Alignment
@@ -108,10 +111,16 @@
     display: flex
     width: 100%
     flex-flow: row wrap
+    margin: 0 0 -#{$gutter/2em}
+    padding: 0 0 $gutter/2em
     > *
       flex: 1 1 0
       box-sizing: border-box
       width: 0
+      margin: 0 $gutter 0 0
+      &:last-child
+        margin-right: 0
+
     > li
       list-style: none
 
@@ -150,7 +159,8 @@
       // Usage: number columns
       .#{$col-slug}.#{$class} > *
         flex: 0 0 calc(#{$width}#{$unit} - #{$gutter})
-        margin: $gutter/2
+        &:nth-child(#{$i+1}n)
+          margin-right: 0
 
       // Usage: columns > number
       .#{$col-slug}
@@ -218,7 +228,8 @@
         // Usage: number columns
         .#{$col-slug}.#{$class}-#{$media} > *
           flex: 0 0 calc(#{$width}#{$unit} - #{$gutter})
-          margin: $gutter/2
+          &:nth-child(#{$i+1}n)
+            margin-right: 0
 
         // Usage: columns > number
         .#{$col-slug}
@@ -229,7 +240,6 @@
         // Usage: number columns stretch
         .#{$col-slug}.stretch.#{$class}-#{$media} > *
           flex: calc(#{$width}#{$unit} - #{$gutter})
-          margin: $gutter/2
 
       // Columns with no gutter
       @for $i from 0 to length($numbers)
@@ -240,12 +250,12 @@
         // Usage: number columns no-gutter
         .#{$col-slug}.no-gutter.#{$class}-#{$media} > *
           flex: 0 0 #{$width}#{$unit}
-          margin: 0
+          margin: 0 !important
 
         // Usage: number columns stretch no-gutter
         .#{$col-slug}.no-gutter.stretch.#{$class}-#{$media} > *
           flex: calc(#{$width}#{$unit})
-          margin: 0
+          margin: 0 !important
 
       // Masonry bricks
       @for $i from 0 to length($bricks)
