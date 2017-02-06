@@ -111,10 +111,13 @@
     display: flex
     width: 100%
     flex-flow: row wrap
+    margin: 0 0 -#{$gutter/2em}
+    padding: 0 0 $gutter/2em
     > *
       flex: 1 1 0
       box-sizing: border-box
       width: 0
+<<<<<<< HEAD
       margin-right: $gutter
       &:last-child
         margin-right: 0
@@ -122,6 +125,12 @@
       > *
         margin-right: 0
         
+=======
+      margin: 0 $gutter 0 0
+      &:last-child
+        margin-right: 0
+
+>>>>>>> c068ef7d6eff8a987552488f04bc88d89b13f8ad
     > li
       list-style: none
 
@@ -161,7 +170,11 @@
       .#{$col-slug}.#{$class} > *
         flex: 0 0 calc(#{$width}#{$unit} - #{$gutter})
         &:nth-child(#{$i+1}n)
+<<<<<<< HEAD
           margin-right: 0 !important
+=======
+          margin-right: 0
+>>>>>>> c068ef7d6eff8a987552488f04bc88d89b13f8ad
 
       // Usage: columns > number
       .#{$col-slug}
@@ -230,7 +243,11 @@
         .#{$col-slug}.#{$class}-#{$media} > *
           flex: 0 0 calc(#{$width}#{$unit} - #{$gutter})
           &:nth-child(#{$i+1}n)
+<<<<<<< HEAD
             margin-right: 0 !important
+=======
+            margin-right: 0
+>>>>>>> c068ef7d6eff8a987552488f04bc88d89b13f8ad
 
         // Usage: columns > number
         .#{$col-slug}
