@@ -52,7 +52,7 @@
     &.horizontal
       margin: auto
     &.all
-      display: flex
+      @include flexbox()
       justify-content: center
       align-items: center
 
@@ -81,7 +81,7 @@
         &.horizontal
           margin: auto
         &.all
-          display: flex
+          @include flexbox()
           justify-content: center
           align-items: center
 
@@ -108,38 +108,28 @@
   // Columns
   // ----------------------------------------------------
   .#{$col-slug}
-    display: flex
+    @include flexbox()
     width: 100%
     flex-flow: row wrap
     margin: 0 0 -#{$gutter/2em}
     padding: 0 0 $gutter/2em
     > *
-      flex: 1 1 0
+      @include flex(1 1 0)
       box-sizing: border-box
       width: 0
-<<<<<<< HEAD
-      margin-right: $gutter
-      &:last-child
-        margin-right: 0
-    &.no-gutter
-      > *
-        margin-right: 0
-        
-=======
       margin: 0 $gutter 0 0
       &:last-child
         margin-right: 0
 
->>>>>>> c068ef7d6eff8a987552488f04bc88d89b13f8ad
     > li
       list-style: none
 
   .lines
-    display: flex
+    @include flexbox()
     width: 100%
     flex-flow: column wrap
     > *
-      flex: 1 1 0
+      @include flex(1 1 0)
       box-sizing: border-box
     > li
       list-style: none
@@ -162,28 +152,24 @@
 
       // Ordering
       .first
-        order: -1
+        @include order(-1)
       .last
-        order: 1
+        @include order(1)
 
       // Usage: number columns
       .#{$col-slug}.#{$class} > *
-        flex: 0 0 calc(#{$width}#{$unit} - #{$gutter})
+        @include flex(0 0 calc(#{$width}#{$unit} - #{$gutter}))
         &:nth-child(#{$i+1}n)
-<<<<<<< HEAD
-          margin-right: 0 !important
-=======
           margin-right: 0
->>>>>>> c068ef7d6eff8a987552488f04bc88d89b13f8ad
 
       // Usage: columns > number
       .#{$col-slug}
         .#{$fclass}
-          flex: 0 0 calc(#{$width}#{$unit}) !important
+          @include flex(0 0 calc(#{$width}#{$unit}) !important)
 
       // Usage: number columns stretch
       .#{$col-slug}.stretch.#{$class} > *
-        flex: calc(#{$width}#{$unit} - #{$gutter})
+        @include flex(calc(#{$width}#{$unit} - #{$gutter}))
 
     @for $i from 0 to length($numbers)
       $class: unquote(nth($numbers, $i+1))
@@ -192,13 +178,13 @@
 
       // Usage: number columns no-gutter
       .#{$col-slug}.no-gutter.#{$class} > *
-        flex: 0 0 #{$width}#{$unit}
-        margin: 0 !important
+        @include flex(0 0 #{$width}#{$unit})
+        margin: 0
 
       // Usage: number columns stretch no-gutter
       .#{$col-slug}.no-gutter.stretch.#{$class} > *
-        flex: calc(#{$width}#{$unit})
-        margin: 0 !important
+        @include flex(calc(#{$width}#{$unit}))
+        margin: 0
 
     // Masonry bricks
     @for $i from 0 to length($bricks)
@@ -210,7 +196,7 @@
     @for $i from 0 to length($multiply)
       $eclass: unquote(nth($multiply, $i+1))
       .#{$eclass}
-        flex: ($i+1) 1
+        @include flex(($i+1) 1)
 
   // ----------------------------------------------------
   // Widths for mobile
@@ -228,9 +214,9 @@
 
       // Ordering
       .first-#{$media}
-        order: -1
+        @include order(-1)
       .last-#{$media}
-        order: 1
+        @include order(1)
 
       // Columns
       @for $i from 0 to length($numbers)
@@ -241,23 +227,24 @@
 
         // Usage: number columns
         .#{$col-slug}.#{$class}-#{$media} > *
-          flex: 0 0 calc(#{$width}#{$unit} - #{$gutter})
+          @include flex(0 0 calc(#{$width}#{$unit} - #{$gutter}))
           &:nth-child(#{$i+1}n)
-<<<<<<< HEAD
-            margin-right: 0 !important
-=======
             margin-right: 0
->>>>>>> c068ef7d6eff8a987552488f04bc88d89b13f8ad
 
         // Usage: columns > number
         .#{$col-slug}
           .#{$fclass}-#{$media}
-            flex: 0 0 calc(#{$width}#{$unit} - #{$gutter}) !important
+            @include flex(0 0 calc(#{$width}#{$unit} - #{$gutter}) !important)
             padding: $gutter/2
+
+        .#{$col-slug}.no-gutter
+          .#{$fclass}-#{$media}
+            @include flex(0 0 calc(#{$width}#{$unit} - #{$gutter}) !important)
+            padding: 0
 
         // Usage: number columns stretch
         .#{$col-slug}.stretch.#{$class}-#{$media} > *
-          flex: calc(#{$width}#{$unit} - #{$gutter})
+          @include flex(calc(#{$width}#{$unit} - #{$gutter}))
 
       // Columns with no gutter
       @for $i from 0 to length($numbers)
@@ -267,12 +254,12 @@
 
         // Usage: number columns no-gutter
         .#{$col-slug}.no-gutter.#{$class}-#{$media} > *
-          flex: 0 0 #{$width}#{$unit}
+          @include flex(0 0 #{$width}#{$unit})
           margin: 0 !important
 
         // Usage: number columns stretch no-gutter
         .#{$col-slug}.no-gutter.stretch.#{$class}-#{$media} > *
-          flex: calc(#{$width}#{$unit})
+          @include flex(calc(#{$width}#{$unit}))
           margin: 0 !important
 
       // Masonry bricks
@@ -285,7 +272,7 @@
       @for $i from 0 to length($multiply)
         $eclass: unquote(nth($multiply, $i+1))
         .#{$eclass}-#{$media}
-          flex: ($i+1) 1
+          @include flex(($i+1) 1)
 
   // ----------------------------------------------------
   // Container
