@@ -4,6 +4,7 @@
 //  Creates the functions used in the styles.
 //  Make sure you know what you're doing before altering this code.
 //
+//  - Prefixes
 //  - Visibility
 //  - Position
 //  - Size
@@ -12,12 +13,35 @@
 // ----------------------------------------------------------------------
 
 // ----------------------------------------------------
+// Prefixes
+// ----------------------------------------------------
+=flexbox()
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+=flex($values)
+  -webkit-box-flex: $values
+  -moz-box-flex:  $values
+  -webkit-flex:  $values
+  -ms-flex:  $values
+  flex:  $values
+
+=order($val)
+  -webkit-box-ordinal-group: $val
+  -moz-box-ordinal-group: $val
+  -ms-flex-order: $val
+  -webkit-order: $val
+  order: $val
+
+// ----------------------------------------------------
 // Visibility
 // ----------------------------------------------------
 =responsive-visibility($class)
   .visible-#{$class}
     display: block
-  //content: #{$class}
   table.visible-#{$class},
   tr.visible-#{$class},
     display: table
