@@ -111,19 +111,20 @@
     +flexbox()
     width: 100%
     flex-flow: row wrap
-    margin: 0 0 -#{$gutter/2em}
-    padding: 0 0 $gutter/2em
     box-sizing: border-box
     > *
       +flex(1 1 0)
       box-sizing: border-box
       width: 0
-      margin: 0 $gutter 0 0
+      margin-right: $gutter
       &:last-child
         margin-right: 0
-
+    
     > li
       list-style: none
+    &.no-gutter 
+      > *
+        margin-right: 0 !important
 
   .lines
     +flexbox()
@@ -180,12 +181,10 @@
       // Usage: number columns no-gutter
       .#{$col-slug}.no-gutter.#{$class} > *
         +flex(0 0 #{$width}#{$unit})
-        margin: 0
 
       // Usage: number columns stretch no-gutter
       .#{$col-slug}.no-gutter.stretch.#{$class} > *
         +flex(calc(#{$width}#{$unit}))
-        margin: 0
 
     // Masonry bricks
     @for $i from 0 to length($bricks)
@@ -241,7 +240,7 @@
         .#{$col-slug}.no-gutter
           .#{$fclass}-#{$media}
             +flex(0 0 calc(#{$width}#{$unit} - #{$gutter}) !important)
-            padding: 0
+            padding: 0 !important
 
         // Usage: number columns stretch
         .#{$col-slug}.stretch.#{$class}-#{$media} > *
