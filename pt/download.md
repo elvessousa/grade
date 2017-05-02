@@ -22,11 +22,11 @@ Para usá-la, copie o arquivo para o seu projeto, o referencie na página e seja
 ### Usando o código fonte
 
 #### NPM: node package manager
-Se você não possui o node instalado, baixe-o do site, ou use um gerenciador de pacotes de sua preferência.
+Se você não possui o node instalado, baixe-o do [site](https://nodejs.org), ou use um gerenciador de pacotes de sua preferência.
 
 #### Gulp
-É um gerenciador de tarefas. Mais informaç˜ies no [site do Gulp](http://gulpjs.com).
-Para instalà-lo no seu sistema, execute:
+É um gerenciador de tarefas. Mais informações no [site do Gulp](http://gulpjs.com).
+Para instalá-lo no seu sistema, execute:
 
 {% highlight shell %}
   $ (sudo) npm install -g gulp

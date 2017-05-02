@@ -4,14 +4,25 @@
       {% assign version = page.language %}
       {% case version %}
       {% when 'pt' %}
-      <a class="logo third" href="{{ site.baseurl }}/{{ page.language }}">{{ site.title }}</a>
+      <a class="logo third full-tablet full-phone" href="{{ site.baseurl }}/pt">
+        <img src="../../img/logo.png" alt="" width="20">
+        {{ site.title }}
+      </a>
+      <a class="lang-icon english" href="{{ site.baseurl }}/">
+        <img src="{{ site.baseurl }}/img/en-us.svg" alt="Elves Sousa" width="60">
+      </a>
       {% else %}
-      <a class="logo third" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      <a class="logo third full-tablet full-phone" href="{{ site.baseurl }}/">
+        <img src="../../img/logo.png" alt="" width="20">
+        {{ site.title }}
+      </a>
+      <a class="lang-icon portuguese" href="{{ site.baseurl }}/pt">
+        <img src="{{ site.baseurl }}/img/pt.svg" alt="Elves Sousa" width="60">
+      </a>
       {% endcase %}
-      <!-- <a href="#" class="menu-icon"></a> -->
-      <div class="mobile-menu visible-phone">
+      <div class="mobile-menu hidden-desktop">
         <input type='checkbox' id='toggle'/>
-        <label for="toggle" class="toggle" onclick>&equiv;</label>
+        <label for="toggle" class="toggle">&equiv;</label>
         <nav class="mobile-links vertical center full-phone">
           {% for nav in site.data.navigation[page.language] %}
           {% for item in nav.links %}
@@ -22,7 +33,7 @@
           {% endfor %}
         </nav>
       </div>
-      <nav class="links half to-right vertical center hidden-phone">
+      <nav class="links half to-right vertical center hidden-tablet hidden-phone">
         {% for nav in site.data.navigation[page.language] %}
         {% for item in nav.links %}
         <a class="page-link" href="{{ item.url | prepend: site.baseurl }}">

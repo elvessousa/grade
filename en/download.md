@@ -22,7 +22,7 @@ To use it, copy to your project link it in your page and be happy:
 ### Using the source code
 
 #### NPM: node package manager
-If you don't have node installed, download it from the site, or use a package manager of your choice.
+If you don't have node installed, download it from the [site](https://nodejs.org), or use a package manager of your choice.
 
 
 #### Gulp

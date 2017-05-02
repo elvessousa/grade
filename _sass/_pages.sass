@@ -41,10 +41,17 @@ hr
   border-top: 2px solid #ddd
   margin: 2em 0
 
+.container
+  max-width: 45em !important
+
 /* Navigation
 .navigation
   position: absolute
   width: 100vw
+  @media #{$phone}
+    padding: 15px 0
+  @media #{$tablet}
+    padding: 15px 0
   li
     list-style: none
   a
@@ -61,6 +68,38 @@ hr
 .logo
   font-weight: bold
   font-size: 1.2em
+  text-transform: uppercase
+  img
+    opacity: .8
+
+.lang-icon
+  position: absolute
+  top: 0
+  right: 0
+  width: 60px !important
+  height: 60px
+  opacity: .5
+  &:hover
+    opacity: 1
+
+  &:hover::after
+    position: absolute
+    top: 1em
+    right: 1em
+    font-size: .6em
+    width: 8.5em
+    font-weight: normal
+    background: #fff
+    color: #000
+    border: 1px solid #ccc
+    border-radius: 3px
+    box-shadow: 0 0 20px rgba(0,0,0,.5)
+    text-align: center
+
+  &.portuguese:hover::after
+    content: 'Em português'
+  &.english:hover::after
+    content: 'English version'
 
 .links
   text-align: center
@@ -106,20 +145,37 @@ hr
 
 .stuff
   width: 80%
+  text-align: center
   > p
     text-align: center
+    color: #fff
+    opacity: .5
+  img
+    margin: auto
 
 .logo
   padding: 10px
+  @media #{$phone}
+    text-align: center
+  @media #{$tablet}
+    text-align: center
 
 .full-header
   height: 100vh
-  background: #000
+  background: #3E0404 url(../img/back.jpg) no-repeat center
+  background-size: cover
   color: #fff
+  h1
+    color: #fff
+    text-align: center
+    font-size: 3.3em
+    text-transform: uppercase
 
 .post-header
   height: 30vh
-  background: #000
+  min-height: 300px
+  background: #3E0404 url(../img/back.jpg) no-repeat center
+  background-size: cover
   color: #fff
 
 .text
@@ -130,7 +186,7 @@ hr
 
 /* Footer
 footer
-  background: #333
+  background: #eee
   color: #666
   padding: 40px 0
 
@@ -140,6 +196,12 @@ footer
     padding: 5px
     &:hover
       border: 1px solid #ccc
+
+  .desc
+    @media #{$phone}
+      text-align: center
+    @media #{$tablet}
+      text-align: center
 
 .footer-links
   ul
@@ -151,6 +213,13 @@ footer
 
 /* Indice
 .indice
+  box-shadow: 0 0 20px rgba(0,0,0,.2)
+  padding: .5em 1.5em
+  border-radius: .5em
+  width: 150px
+  background: #fff
+  @media #{$tablet}
+    margin-left: -2em    
   a
     display: block
     color: $grey-text
@@ -161,6 +230,8 @@ footer
     position: fixed
     top: 10px
     font-weight: 300
+
+    
 
 /* Grid Demo
 .grid-demo
@@ -217,57 +288,65 @@ footer
   background: #222
 
 
-/* Grid Demo
+/* Menu functionality
 #toggle, .toggle
   display: none
 
-@media #{$phone}
-  .logo
-    text-align: center
-  .mobile-links
-    border-top: 1px solid #222
+.mobile-links
+  border-top: 1px solid #222
+  width: 100%
+  position: absolute
+  opacity: 0
+  background: #111
+  padding: 0 !important
+  transition: all .5s ease-in-out
+  top: 3em
+  left: 0
+  @media #{$desktop}
     display: none
-    width: 100%
-    position: absolute
-    opacity: 0
-    background: #111
-    padding: 0 !important
-    transition: all .5s ease-in-out
-    a
-      -webkit-box-sizing: border-box
-      -moz-box-sizing: border-box
-      box-sizing: border-box
-      display: block
-      text-decoration: none
-      width: 100vw
-      font-weight: 300
-      text-align: center
-      padding: 5px 0 !important
-      border-bottom: 1px solid #222
-
-  .toggle
-    cursor: pointer
+  @media #{$phone}
     display: block
-    position: relative
-    -webkit-touch-callout: none
-    -webkit-user-select: none
-    user-select: none
-    color: #fff
-    text-transform: uppercase
-    text-align: center
-    position: absolute
-    top: 0
-    right: 10px
-    padding: .4em
-    transition: all .5s ease-in-out
-    font-size: 28px
-
-  #toggle:checked + label
-    color: #fc0
-  #toggle:checked ~ .mobile-links
+  @media #{$tablet}
     display: block
-    opacity: 1
-    transition: all .5s ease-in-out
 
-  footer .desc
+  a
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    display: block
+    text-decoration: none
+    width: 100vw
+    font-weight: 300
     text-align: center
+    padding: 5px 0 !important
+    border-bottom: 1px solid #222
+
+.toggle
+  cursor: pointer
+  display: block
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  user-select: none
+  color: #fff
+  text-transform: uppercase
+  text-align: center
+  position: absolute
+  top: 0
+  left: 10px
+  padding: .4em
+  transition: all .5s ease-in-out
+  font-size: 28px
+
+#toggle:checked + label
+  color: #fc0
+#toggle:checked ~ .mobile-links
+  display: block
+  opacity: 1
+  transition: all .5s ease-in-out
+
+// @media #{$phone}
+//   .logo
+//     text-align: center
+//   footer
+//     .desc
+//       text-align: center
