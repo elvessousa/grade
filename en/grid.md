@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Docs
+title: Documentation
 permalink: /en/docs/
 language: en
 ---
