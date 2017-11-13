@@ -14,8 +14,8 @@ To use it, copy to your project link it in your page and be happy:
   <link rel="stylesheet" href="path/to/css/grade.css">
 {% endhighlight %}
 
-
 [**Download zip**](https://github.com/elvessousa/grade/archive/master.zip)
+[**Github repo**](https://github.com/elvessousa/grade)
 
 ---
 
