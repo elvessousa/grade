@@ -11,7 +11,7 @@ gulp.task('styles', function () {
 		style: 'compressed',
 		sourcemap: true })
 	.pipe(maps.write('../maps'))
-    .pipe(gulp.dest('pub/css'));
+    .pipe(gulp.dest('dist/css'));
 });
 
 // Watch directories
