@@ -17,6 +17,7 @@
 // ----------------------------------------------------------------------
 @function fibonacci($n, $ratio: 1.618, $unit: em)
   $fib: 1 $ratio
+
   @for $i from 1 through $n
     $new: nth($fib, length($fib)) + nth($fib, length($fib) - 1)
     $fib: append($fib, $new)
@@ -33,12 +34,13 @@
   display: -webkit-flex
   display: flex
 
-=flex($values)
-  -webkit-box-flex: $values
-  -moz-box-flex:  $values
-  -webkit-flex:  $values
-  -ms-flex:  $values
-  flex:  $values
+=flex($grow, $shrink, $basis)
+  -webkit-box-flex: $grow $shrink
+  -moz-box-flex: $grow $shrink
+  -webkit-flex: $grow $shrink
+  -ms-flex: $grow $shrink
+  flex: $grow $shrink
+  flex-basis: $basis
 
 =order($val)
   -webkit-box-ordinal-group: $val
@@ -53,18 +55,26 @@
 =responsive-visibility($class)
   .visible-#{$class}
     display: block
-  table.visible-#{$class},
-  tr.visible-#{$class},
-    display: table
-    display: table-row
-  th.visible-#{$class},
-  td.visible-#{$class}
-    display: table-cell
-  span.visible-#{$class},
-  small.visible-#{$class}
-    display: block
-  a.visible-#{$class}
-    display: inline-block
+
+  table,
+  tr
+    &.visible-#{$class}
+      display: table
+      display: table-row
+
+  th,
+  td
+    &.visible-#{$class}
+      display: table-cell
+
+  span,
+  small
+    &.visible-#{$class}
+      display: block
+
+  a
+    &.visible-#{$class}
+      display: inline-block
 
 =responsive-invisibility($class)
   $mediaclasses: mini phone tablet desktop
@@ -77,11 +87,11 @@
 // Position
 // ----------------------------------------------------
 =pos($pos: absolute, $top: 0, $left: 0, $bottom: 0, $right: 0)
-  position: $pos
-  top: $top
-  left: $left
   bottom: $bottom
+  left: $left
+  position: $pos
   right: $right
+  top: $top
 
 // ----------------------------------------------------
 // Size
@@ -89,7 +99,6 @@
 =size($height: auto, $width: auto)
   height: $height
   width: $width
-
 
 // ----------------------------------------------------
 // Mason
