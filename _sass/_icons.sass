@@ -1,0 +1,72 @@
+// -----------------------------------------------------------------------------
+//
+//   - Icons
+//   - Icon lists
+//   - Font face
+//   - Icon classes
+//
+// ----------------------------------------------------
+// Icons
+// ----------------------------------------------------
+$ie: '\eadb'
+$android: '\eac0'
+$appleinc: '\eabe'
+$chrome: '\ead9'
+$display: '\e956'
+$edge: '\eadc'
+$file-zip: '\e92b'
+$firefox: '\eada'
+$git: '\eae7'
+$laptop: '\e957'
+$mobile2: '\e959'
+$mobile: '\e958'
+$opera: '\eade'
+$safari: '\eadd'
+$tablet: '\e95a'
+$tux: '\eabd'
+$tv: '\e95b'
+$windows8: '\eac2'
+
+// ----------------------------------------------------
+// Icon lists
+// ----------------------------------------------------
+$chars: $android, $appleinc, $chrome, $display, $edge, $file-zip, $firefox, $git, $ie, $laptop, $mobile, $mobile2, $opera, $safari, $tablet, $tux, $tv, $windows8
+$icons: android, appleinc, chrome, display, edge, file-zip, firefox, git, ie, laptop, mobile, mobile2, opera, safari, tablet, tux, tv, windows8
+
+// ----------------------------------------------------
+// Font face
+// ----------------------------------------------------
+@font-face
+  font-family: 'icons'
+  font-style: normal
+  font-weight: normal
+  src: url('fonts/icons.eot?ssv1o2#iefix') format('embedded-opentype')
+  src: url('fonts/icons.eot?ssv1o2')
+  src: url('fonts/icons.svg?ssv1o2#icons') format('svg')
+  src: url('fonts/icons.ttf?ssv1o2') format('truetype')
+  src: url('fonts/icons.woff?ssv1o2') format('woff')
+
+
+// ----------------------------------------------------
+// Icon classes
+// ----------------------------------------------------
+[class^="icon-"], 
+[class*=" icon-"]
+  // use !important to prevent issues with browser extensions that change fonts
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  font-family: 'icons' !important
+  font-style: normal
+  font-variant: normal
+  font-weight: normal
+  line-height: 1
+  speak: none
+  text-transform: none
+
+@for $i from 1 to length($icons)
+  $char: nth($chars, $i)
+  $icon: nth($icons, $i)
+
+  .icon-#{$icon}
+    &::before
+      content: $char

@@ -1,5 +1,36 @@
 {% include banner.html %}
 
+<!-- Browsers -->
+<h3>Navegadores</h3>
+<p>Qualquer navegador moderno com suporte ao Flexbox poder utilizar esta grade.</p>
+<div class="columns">
+  <div class="browser">
+    <i class="icon-ie"></i>
+    <span>11*</span>
+  </div>
+  <div class="browser">
+    <i class="icon-edge"></i>
+    <span>12+</span>
+  </div>
+  <div class="browser">
+    <i class="icon-safari"></i>
+    <span>9+</span>
+  </div>
+  <div class="browser">
+    <i class="icon-firefox"></i>
+    <span>28+</span>
+  </div>
+  <div class="browser">
+    <i class="icon-chrome"></i>
+    <span>29+</span>
+  </div>
+  <div class="browser">
+    <i class="icon-opera"></i>
+    <span>12.1+</span>
+  </div>
+</div>
+<small>* Alguns pequenos problemas podem ocorrer, já que este navegador usa tecnologia antiga.</small>
+
 <!-- Colunas -->
 <h3>Colunas</h3>
 <p>Defina um número de colunas somente uma vez, não em cada elemento.</p>
@@ -563,43 +594,65 @@
 <div class="grid-demo">
   <div class="columns">
     <div class="visible-phone">
-      <h1><i class="fa fa-mobile"></i></h1>
-      <p class="text-center">Visible phone</p>
+      <h1><i class="icon-mobile"></i></h1>
+      <p class="text-center">Visível em smartphones</p>
     </div>
     <div class="visible-tablet">
-      <h1><i class="fa fa-tablet"></i></h1>
-      <p class="text-center">Visible tablet</p>
+      <h1><i class="icon-tablet"></i></h1>
+      <p class="text-center">Visível em tablets</p>
     </div>
     <div class="visible-desktop">
-      <h1><i class="fa fa-desktop"></i></h1>
-      <p class="text-center">Visible desktop</p>
+      <h1><i class="icon-display"></i></h1>
+      <p class="text-center">Visível em desktop</p>
     </div>
   </div>
   <div class="columns text-center visibility">
-    <p class="hidden-phone"><i class="fa fa-mobile"></i> <small>Hidden on phones</small></p>
-    <p class="hidden-tablet"><i class="fa fa-tablet"></i> <small>Hidden on tablet</small></p>
-    <p class="hidden-desktop"><i class="fa fa-desktop"></i> <small>Hidden on desktop</small></p>
+    <p class="hidden-phone">
+      <i class="icon-mobile"></i>
+      <small>Escondido em smartphones</small>
+    </p>
+    <p class="hidden-tablet">
+      <i class="icon-tablet"></i>
+      <small>Escondido em tablets</small>
+    </p>
+    <p class="hidden-desktop">
+      <i class="icon-display"></i>
+      <small>Escondido em desktops</small>
+    </p>
   </div>
   {% highlight html %}
   <div class="visible-phone">
-    <h1><i class="fa fa-mobile"></i></h1>
-    <p class="text-center">Visible phone</p>
+    <h1>
+      <i class="icon-mobile"></i>
+    </h1>
+    <p class="text-center">Visível em smartphones</p>
   </div>
   <div class="visible-tablet">
-    <h1><i class="fa fa-tablet"></i></h1>
-    <p class="text-center">Visible tablet</p>
+    <h1>
+      <i class="icon-tablet"></i>
+    </h1>
+    <p class="text-center">Visível em tablets</p>
   </div>
   <div class="visible-desktop">
-    <h1><i class="fa fa-desktop"></i></h1>
-    <p class="text-center">Visible desktop</p>
+    <h1>
+      <i class="icon-display"></i>
+    </h1>
+    <p class="text-center">Visível em desktop</p>
   </div>
   {% endhighlight %}
   {% highlight html %}
-  <div class="columns text-center visibility">
-    <p class="hidden-phone"><i class="fa fa-mobile"></i> <small>Hidden on phones</small></p>
-    <p class="hidden-tablet"><i class="fa fa-tablet"></i> <small>Hidden on tablet</small></p>
-    <p class="hidden-desktop"><i class="fa fa-desktop"></i> <small>Hidden on desktop</small></p>
-  </div>
+  <p class="hidden-phone">
+    <i class="icon-mobile"></i>
+    <small>Escondido em smartphones</small>
+  </p>
+  <p class="hidden-tablet">
+    <i class="icon-tablet"></i>
+    <small>Escondido em tablets</small>
+  </p>
+  <p class="hidden-desktop">
+    <i class="icon-display"></i>
+    <small>Escondido em desktops</small>
+  </p>
   {% endhighlight %}
 </div>
 
