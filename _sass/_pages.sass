@@ -32,15 +32,15 @@ code
   line-height: 1em
 
 figure
-  border: 1px solid #eee
-  border-left: 6px solid #eee
+  border: 1px solid $border-color
+  border-left: 6px solid $border-color
   font-size: .8em
   margin: 2em 0
   overflow: scroll
 
 hr
   border: 0
-  border-top: 2px solid #ddd
+  border-top: 2px solid darken($border-color, 6.5%)
   margin: 2em 0
 
 .container
@@ -64,7 +64,7 @@ hr
     list-style: none
 
   a
-    color: #fff
+    color: $accent-text
     font-weight: 100
     text-decoration: none
 
@@ -105,11 +105,11 @@ hr
     opacity: 1
 
   &:hover::after
-    background: #fff
-    border: 1px solid #ccc
+    background: $lightest-color
+    border: 1px solid darken($border-color, 13.5%)
     border-radius: 3px
     box-shadow: 0 0 20px rgba(0, 0, 0, .5)
-    color: #000
+    color: $darkest-text
     font-size: .6em
     font-weight: normal
     position: absolute
@@ -128,10 +128,10 @@ hr
   text-align: center
 
 .content
-  background: #f8f8f8
+  background: $light-back
 
   p
-    color: #999
+    color: $light-text
     font-size: .8em
     margin: 1em
 
@@ -141,28 +141,13 @@ hr
 
 .widget
   p
-    color: #999
+    color: $light-text
     font-size: .8em
     margin: 0
 
-.coltroller
-  input
-    background: none
-    border: 0
-    color: #490
-    font-size: 2em
-    outline: none
-    text-align: center
-    width: 100%
-
-  h5
-    border-bottom: 1px solid #222
-    margin: 0
-    padding: 10px
-
 .layout
-  border-bottom: 1px solid #eee
-  border-top: 1px solid #eee
+  border-bottom: 1px solid $border-color
+  border-top: 1px solid $border-color
   padding: 40px 0
 
 .auto
@@ -173,7 +158,7 @@ hr
   width: 80%
 
   > p
-    color: #fff
+    color: $accent-text
     opacity: .5
     text-align: center
 
@@ -181,26 +166,26 @@ hr
     margin: auto
 
 .full-header
-  background: #3E0404 url('../img/back.jpg') no-repeat center
+  background: $accent-color url('../img/back.jpg') no-repeat center
   background-size: cover
-  color: #fff
+  color: $accent-text
   height: 100vh
 
   h1
-    color: #fff
+    color: $accent-text
     font-size: 3.3em
     text-align: center
     text-transform: uppercase
 
 .post-header
-  background: #3E0404 url('../img/back.jpg') no-repeat center
+  background: $accent-color url('../img/back.jpg') no-repeat center
   background-size: cover
-  color: #fff
+  color: $accent-text
   height: 30vh
   min-height: 300px
 
 .text
-  border-left: 1px solid #ddd
+  border-left: 1px solid darken($border-color, 6.5%)
   max-width: 40em
   padding: 0 2em
 
@@ -211,18 +196,18 @@ hr
 // Footer
 // ----------------------------------------------------
 footer
-  background: #eee
-  color: #666
+  background: $footer-back
+  color: $grey-text
   padding: 40px 0
 
   input
     &[type='image']
-      border: 1px solid #666
+      border: 1px solid darken($border-color, 52%)
       margin: 0
       padding: 5px
 
     &:hover
-      border: 1px solid #ccc
+      border: 1px solid darken($border-color, 13.5%)
 
   .desc
     @media #{$phone}
@@ -237,7 +222,7 @@ footer
     list-style: none
 
   a
-    color: #eee
+    color: lighten($light-text, 33.2%)
     text-decoration: none
 
 // ----------------------------------------------------
@@ -274,7 +259,7 @@ footer
 
   span
     display: block
-  
+
   i
     font-size: 3em
 
@@ -282,23 +267,22 @@ footer
       display: block
 
   .icon-ie
-    color: #09f
-  
+    color: $color-ie
+
   .icon-chrome
-    color: #fc0
+    color: $color-chrome
 
   .icon-edge
-    color: #069
-  
+    color: $color-edge
+
   .icon-firefox
-    color: #f60
+    color: $color-firefox
 
   .icon-safari
-    color: #2196F3
+    color: $color-safari
 
   .icon-opera
-    color: #c00
-
+    color: $color-opera
 
 // ----------------------------------------------------
 // Grid Demo
@@ -313,45 +297,46 @@ footer
 
     &.visibility
       p
-        color: #999
+        color: $light-text
+
       i
-        color: #000
+        color: $darkest-text
 
     .columns
-      margin: 1em 0
-      box-shadow: none
+      border-bottom: 5px solid $lightest-color
       border-radius: 0
-      border-bottom: 5px solid #fff
-      border-top: 5px solid #fff
+      border-top: 5px solid $lightest-color
+      box-shadow: none
+      margin: 1em 0
 
     .item
       align-content: center
-      background: #666
-      color: #ccc
+      background: $item-color
+      color: $muted-text
       font-size: .8em
       line-height: 2.5em
       min-height: 2.5em
-      outline: 6px solid #fff
+      outline: 6px solid $lightest-color
       text-align: center
       transition: all .5s linear
 
       &:hover
-        background: #000
-        color: #fff
+        background: $darkest-color
+        color: $accent-text
 
 .border
-  border: 2px solid #eee
+  border: 2px solid $border-color
 
 .block
   height: 400px
 
 .position-demo
-  background: #f8f8f8
-  border-bottom: 6px solid #000
-  border-top: 6px solid #000
+  background: $light-back
+  border-bottom: 6px solid $darkest-color
+  border-top: 6px solid $darkest-color
 
   .stuff
-    background: #fff
+    background: $lightest-color
     padding: 1em
 
     h4
@@ -360,7 +345,7 @@ footer
 .item
   &.last,
   &.first
-    background: #222
+    background: lighten($darkest-color, 13.5%)
 
 // ----------------------------------------------------
 // Menu functionality
@@ -370,8 +355,8 @@ footer
   display: none
 
 .mobile-links
-  background: #111
-  border-top: 1px solid #222
+  background: lighten($content-link, 6.5%)
+  border-top: 1px solid $dark-border
   left: 0
   opacity: 0
   padding: 0 !important
@@ -393,7 +378,7 @@ footer
   a
     -moz-box-sizing: border-box
     -webkit-box-sizing: border-box
-    border-bottom: 1px solid #222
+    border-bottom: 1px solid $dark-border
     box-sizing: border-box
     display: block
     font-weight: 300
@@ -405,7 +390,7 @@ footer
 .toggle
   -webkit-touch-callout: none
   -webkit-user-select: none
-  color: #fff
+  color: $accent-text
   cursor: pointer
   display: block
   font-size: 28px
@@ -420,7 +405,7 @@ footer
 
 #toggle
   &:checked + label
-    color: #fc0
+    color: $glow-text
 
   &:checked ~ .mobile-links
     display: block

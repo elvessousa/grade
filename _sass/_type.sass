@@ -1,25 +1,21 @@
-@import "typevars"
+@import typevars
 
 body
+  font-family: $text-font
+  font-size: $base-size
+  font-weight: $base-weight
   line-height: $line-height
-  font:
-    family: $text-font
-    size: $base-size
-    weight: $base-weight
 
 pre
-  font:
-    family: $code-font !important
-    size: $code-size
+  font-family: $code-font !important
+  font-size: $code-size
 
 code
-  font:
-    family: $code-font
+  font-family: $code-font
 
 a
-  font:
-    family: $title-font
-    weight: $base-weight
+  font-family: $title-font
+  font-weight: $base-weight
   text-decoration: none
   transition: all .5s ease-in-out
 
@@ -31,57 +27,62 @@ a
   article &,
   p &
     color: $content-link
+
     &:hover
       color: lighten($content-link, 30%)
 
   footer &,
-  footer p &,
+  footer p &
     color: $footer-link
+
     &:hover
       color: darken($footer-link, 10%)
 
-a[href$=".zip"]
-  background: #080
-  border-radius: 3px
-  border: 2px solid #080  
-  color: #fff
-  display: inline-block
-  margin: 10px auto
-  max-width: 100%
-  padding: 1em
-  text-align: center
-  width: 10em
-  &:hover
-    background: #0a0
-    border: 2px solid #0a0  
-    color: #fff
+  &[href$='.zip']
+    background: $button-color
+    border: 2px solid $button-color
+    border-radius: 3px
+    color: $lightest-text
+    display: inline-block
+    margin: 10px auto
+    max-width: 100%
+    padding: 1em
+    text-align: center
+    width: 10em
 
-a[href$="/grade"]
-  background: transparent
-  border-radius: 3px
-  border: 2px solid #000
-  color: #000
-  display: inline-block
-  margin: 10px auto
-  max-width: 100%
-  opacity: .5
-  padding: 1em
-  text-align: center
-  // transition: all .2s ease-in-out
-  width: 10em
-  &:hover
-    opacity: 1
+    &:hover
+      background: lighten($button-color, 6.5%)
+      border: 2px solid lighten($button-color, 6.5%)
+      color: $accent-text
 
-h1, h2, h3, h4
-  font:
-    family: $title-font
-    weight: inherit
-  margin: 1.414em 0 .5em
+  &[href$='/grade']
+    background: transparent
+    border: 2px solid $dark-border
+    border-radius: 3px
+    color: $dark-border
+    display: inline-block
+    margin: 10px auto
+    max-width: 100%
+    opacity: .5
+    padding: 1em
+    text-align: center
+    width: 10em
+
+    &:hover
+      opacity: 1
+
+h1,
+h2,
+h3,
+h4
+  font-family: $title-font
+  font-weight: inherit
   line-height: 1.2
+  margin: 1.414em 0 .5em
 
 h1
-  margin-top: 0
   font-size: $huge-title
+  margin-top: 0
 
   .masthead &
     font-size: $huge-title
@@ -103,9 +104,10 @@ p
 blockquote
   font-size: $big-text
   font-style: italic
+
   cite
-    text-align: center
     font-size: $small-text
+    text-align: center
 
 small,
 .font_small
@@ -115,16 +117,13 @@ img + em
   font-size: 1em
 
 .site-link
-  font-weight: $light-weight
   font-size: $normal-title
+  font-weight: $light-weight
   line-height: normal
+
 .site-url
   font-size: $small-text
   line-height: $small-text
-
-.works
-  .image a h4
-    font-size: 1em
 
 .social
   li
@@ -132,10 +131,11 @@ img + em
     line-height: 1em
 
 .language-link
-  color: #666
+  color: $grey-text
   font-weight: 100
+
   &:hover
-    color: #fff
+    color: $lightest-text
 
 footer
   .desc
@@ -144,28 +144,33 @@ footer
 @media #{$phone}
   h1
     font-size: 300%
+
   h2
     font-size: 200%
+
   h3
     font-size: 180%
+
   h4
     font-size: 120%
 
   blockquote
     font-size: 1.2em
     text-align: left
+
     p
       margin: 0
 
-  .masthead h1
-    font-size: $big-title
-    line-height: 1em
+  .masthead
+    h1
+      font-size: $big-title
+      line-height: 1em
 
   .page-title
+    bottom: 20px
     font-size: $big-title
     line-height: 1em
     position: absolute
-    bottom: 20px
     z-index: 1
 
   .page-header
@@ -177,5 +182,6 @@ footer
   footer
     h4
       margin: 0
+
     .desc
       text-align: right
