@@ -12,6 +12,12 @@
 <meta property="og:site_name" content="{{ site.title }}">
 {% endif %}
 
+{% if page.description %}
+<meta property="og:description" content="{{ page.description }}">
+{% else %}
+<meta property="og:description" content="{{ site.description }}">
+{% endif %}
+
 {% if page.url %}
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 {% endif %}
@@ -21,7 +27,7 @@
 {% endif %}
 
 {% if page.thumbnail %}
-<meta property="og:image" content="{{ page.thumbnail }}">
+<meta property="og:image" content="{{ site.url }}/{{ page.thumbnail }}">
 {% endif %}
 
 {% if site.owner_link %}
