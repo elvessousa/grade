@@ -3,6 +3,7 @@ layout: page
 title: Iniciando
 permalink: pt/download/
 language: pt
+thumbnail: /img/grade.jpg
 ---
 
 ### Baixe os arquivos

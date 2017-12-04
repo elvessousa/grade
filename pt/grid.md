@@ -3,6 +3,7 @@ layout: documentation
 title: Documentação
 permalink: pt/docs/
 language: pt
+thumbnail: /img/grade.jpg
 ---
 
 Esta é uma grade simples de usar, bem intuitiva até.

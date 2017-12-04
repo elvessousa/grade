@@ -3,6 +3,7 @@ layout: documentation
 title: Documentation
 permalink: /en/docs/
 language: en
+thumbnail: /img/grade.jpg
 ---
 
 This is an easy grid to use, quite intuitive, in fact.

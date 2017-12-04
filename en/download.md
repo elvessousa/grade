@@ -3,6 +3,7 @@ layout: page
 title: Getting started
 permalink: /en/download/
 language: en
+thumbnail: /img/grade.jpg
 ---
 
 ### Download the files
