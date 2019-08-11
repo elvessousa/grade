@@ -11,9 +11,8 @@ The idea behind it is to eliminate the need to add classes in every element insi
 Isn't it boring to see repeated classes everywhere in your code?
 
 #### Why so many classes?
-Suppose you need to make a four column section in your layout.
-What would it be like in the current frameworks available out there?
-Look at it:
+Suppose you need to make a four-column section in your layout. 
+What would it be like in the current frameworks available out there? Look at it:
 
 {% highlight html %}
 <div class="row">
@@ -32,9 +31,10 @@ Look at it:
 </div>
 {% endhighlight %}
 
-There are a lot of classes on those div's, right?
+There are a lot of classes on those div’s, right?
 
-What if you could write the same code as the example below?
+What if you could write the same code like the example below?
+
 {% highlight html %}
 <div class="four columns one-phone">
   <div class="your-class">
@@ -55,9 +55,9 @@ What if you could write the same code as the example below?
 Much better, huh? That's what it's all about.
 
 #### So will I have to leave my favorite framework to use this?
-Ehh, nope... You can mix it with any framework you already use.
+Eh, nope... You can mix it with any framework you already use.
 It only works if you use the **grade** class in the parent element.
-It's unobstrusive.
+It's unobtrusive.
 
 Like this:
 
