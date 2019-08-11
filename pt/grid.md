@@ -6,7 +6,7 @@ language: pt
 thumbnail: /img/grade.jpg
 ---
 
-Esta é uma grade simples de usar, bem intuitiva até.
+> Esta é uma grade simples de usar, bem intuitiva até.
 A ideia é eliminar a necessidade de colocar classes em cada elemento dentro da grade.
 Não é massante ver classes repetidas por todo o seu código?
 

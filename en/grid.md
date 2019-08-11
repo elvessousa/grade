@@ -6,7 +6,7 @@ language: en
 thumbnail: /img/grade.jpg
 ---
 
-This is an easy grid to use, quite intuitive, in fact.
+> This is an easy grid to use, quite intuitive, in fact.
 The idea behind it is to eliminate the need to add classes in every element inside a grid.
 Isn't it boring to see repeated classes everywhere in your code?
 

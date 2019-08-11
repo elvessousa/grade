@@ -1,0 +1,84 @@
+// ----------------------------------------------------
+// Grid Demo
+// ----------------------------------------------------
+.grid-demo
+  margin: 1em 0
+
+  .columns
+    border-radius: 6px
+    margin-bottom: 10px
+    overflow: hidden
+
+    &.visibility
+      p
+        color: $light-text
+
+      i
+        color: $darkest-text
+
+    .columns
+      border-bottom: 5px solid $lightest-color
+      border-radius: 0
+      border-top: 5px solid $lightest-color
+      box-shadow: none
+      margin: 1em 0
+
+    .item
+      align-content: center
+      background: $grid-back
+      color: $lightest-color
+      font-size: .8em
+      line-height: 2.5em
+      min-height: 2.5em
+      outline: 6px solid $lightest-color
+      text-align: center
+      transition: all .5s linear
+
+      &:hover
+        background: $darkest-color
+        color: $accent-text
+
+.border
+  border: 2px solid $border-color
+
+.block
+  height: 400px
+
+.position-demo
+  background: $light-back
+  border-bottom: 6px solid $darkest-color
+  border-top: 6px solid $darkest-color
+
+  .stuff
+    background: $lightest-color
+    padding: 1em
+
+    h4
+      margin: 0
+
+.item
+  &.last,
+  &.first
+    background: lighten($darkest-color, 13.5%)
+
+.content
+  background: $grid-back
+
+  p
+    color: $lightest-color
+    font-size: .8em
+    margin: 1em
+
+  strong
+    color: $lightest-color
+    display: block
+    margin: 1em
+
+.lines
+  div
+    background: $grid-back
+
+.icon-mobile,
+.icon-tablet
+  font-size: 3em
+  display: block

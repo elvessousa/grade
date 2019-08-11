@@ -6,12 +6,10 @@
   {% include header.html %}
   <section class="full-header center all" >
     <div class="stuff">
-      <img src="../../img/logo.png" alt="Image" width="256">
-      <h1>Grade</h1>
       {% assign version = page.language %}
       {% case version %}
       {% when 'pt' %}
-      <p>Uma grid em flexbox para seres humanos.</p>
+      <h1 class="br-title">UMA GRID EM FLEXBOX PARA<span> SERES HUMANOS<span></h1>
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <input type="hidden" name="cmd" value="_donations">
         <input type="hidden" name="business" value="elvessousa@icloud.com">
@@ -25,7 +23,7 @@
         <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
       </form>
       {% else %}
-      <p>A flexbox grid for humans.</p>
+      <h1 class="en-title">A FLEXBOX GRID<span>FOR HUMANS<span></h1>
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <input type="hidden" name="cmd" value="_s-xclick">
         <input type="hidden" name="hosted_button_id" value="4JM3QP3R8QZAC">

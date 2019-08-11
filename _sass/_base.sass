@@ -12,11 +12,12 @@ h1
   text-align: center
 
 h3
+  color: $indice-link
   font-weight: 900
 
 h4
-  color: #666
-  font-weight: 400
+  color: #000
+  font-weight: 900
 
 h5
   margin-bottom: .5em
@@ -32,8 +33,6 @@ code
   line-height: 1em
 
 figure
-  border: 1px solid $border-color
-  border-left: 6px solid $border-color
   font-size: .8em
   margin: 2em 0
   overflow: scroll
@@ -43,8 +42,17 @@ hr
   border-top: 2px solid darken($border-color, 6.5%)
   margin: 2em 0
 
+blockquote
+  margin: 0
+
 .container
-  max-width: 45em !important
+  max-width: 80vw !important
+
+// ----------------------------------------------------
+// Documentation
+// ----------------------------------------------------
+.documentation
+  background: url('../img/grid.png') fixed
 
 // ----------------------------------------------------
 // Navigation
@@ -54,6 +62,7 @@ hr
   position: absolute
   right: 0
   top: 0
+  z-index: 1
 
   @media #{$phone}
     padding: 15px 0
@@ -129,18 +138,6 @@ hr
 .links
   text-align: center
 
-.content
-  background: $light-back
-
-  p
-    color: $light-text
-    font-size: .8em
-    margin: 1em
-
-  strong
-    display: block
-    margin: 1em
-
 .widget
   p
     color: $light-text
@@ -168,29 +165,58 @@ hr
     margin: auto
 
 .full-header
-  background: $accent-color url('../img/back.jpg') no-repeat center
+  background: $accent-color url('../img/splash.jpg') no-repeat center
   background-size: cover
   color: $accent-text
   height: 100vh
 
   h1
     color: $accent-text
-    font-size: 3.3em
+    font-size: 4vw
     text-align: center
     text-transform: uppercase
 
+    span
+      display: block
+      font-weight: 900
+
+  .en-title
+    font-weight: 100
+    line-height: .9
+
+    span
+      font-size: 1.5em
+
+  .br-title
+    // font-size: 3em
+    font-weight: 100
+    line-height: .9
+
+    span
+      font-size: 2em
+      
+
 .post-header
-  background: $accent-color url('../img/back.jpg') no-repeat center
+  background: $accent-color url('../img/splash.jpg') no-repeat center
   background-size: cover
   color: $accent-text
   height: 30vh
+  margin: 0
   min-height: 300px
+  position: relative
+
+.post-title
+  bottom: 0
+  font-weight: 900
+  left: 1.5em
+  line-height: .7
+  margin: 0
+  position: absolute
 
 .text
-  border-left: 1px solid darken($border-color, 6.5%)
-  max-width: 40em
-  padding: 0 2em
-
+  background: $lightest-color
+  padding: 0 3em 0
+ 
 .text-center
   text-align: center
 
@@ -199,8 +225,20 @@ hr
 // ----------------------------------------------------
 footer
   background: $footer-back
-  color: $grey-text
-  padding: 40px 0
+  color: $lightest-color
+
+  h4,
+  p
+    color: $lightest-color
+
+    a
+      color: $lightest-color
+      font-weight: bold
+      opacity: .8
+
+      &:hover
+        color: $lightest-color
+        opacity: 1
 
   input
     &[type='image']
@@ -226,32 +264,6 @@ footer
   a
     color: lighten($light-text, 33.2%)
     text-decoration: none
-
-// ----------------------------------------------------
-// Indice
-// ----------------------------------------------------
-.indice
-  border-radius: .5em
-  padding: .5em 0
-  text-align: right
-  width: 25vw
-
-  @media #{$tablet}
-    margin-left: -2em
-
-
-  a
-    color: $grey-text
-    display: block
-    padding: .2em 0
-
-    &:hover
-      color: $dark-text
-
-  &.fixed
-    font-weight: 300
-    position: fixed
-    top: 10px
 
 // ----------------------------------------------------
 // Browser icons
@@ -286,130 +298,3 @@ footer
   .icon-opera
     color: $color-opera
 
-// ----------------------------------------------------
-// Grid Demo
-// ----------------------------------------------------
-.grid-demo
-  margin: 1em 0
-
-  .columns
-    border-radius: 6px
-    margin-bottom: 10px
-    overflow: hidden
-
-    &.visibility
-      p
-        color: $light-text
-
-      i
-        color: $darkest-text
-
-    .columns
-      border-bottom: 5px solid $lightest-color
-      border-radius: 0
-      border-top: 5px solid $lightest-color
-      box-shadow: none
-      margin: 1em 0
-
-    .item
-      align-content: center
-      background: $item-color
-      color: $muted-text
-      font-size: .8em
-      line-height: 2.5em
-      min-height: 2.5em
-      outline: 6px solid $lightest-color
-      text-align: center
-      transition: all .5s linear
-
-      &:hover
-        background: $darkest-color
-        color: $accent-text
-
-.border
-  border: 2px solid $border-color
-
-.block
-  height: 400px
-
-.position-demo
-  background: $light-back
-  border-bottom: 6px solid $darkest-color
-  border-top: 6px solid $darkest-color
-
-  .stuff
-    background: $lightest-color
-    padding: 1em
-
-    h4
-      margin: 0
-
-.item
-  &.last,
-  &.first
-    background: lighten($darkest-color, 13.5%)
-
-// ----------------------------------------------------
-// Menu functionality
-// ----------------------------------------------------
-#toggle,
-.toggle
-  display: none
-
-.mobile-links
-  background: lighten($content-link, 6.5%)
-  border-top: 1px solid $dark-border
-  left: 0
-  opacity: 0
-  padding: 0 !important
-  position: absolute
-  top: 3em
-  transition: all .5s ease-in-out
-  width: 100%
-
-  @media #{$desktop}
-    display: none
-
-  @media #{$phone}
-    display: block
-
-  @media #{$tablet}
-    display: block
-
-
-  a
-    -moz-box-sizing: border-box
-    -webkit-box-sizing: border-box
-    border-bottom: 1px solid $dark-border
-    box-sizing: border-box
-    display: block
-    font-weight: 300
-    padding: 5px 0 !important
-    text-align: center
-    text-decoration: none
-    width: 100vw
-
-.toggle
-  -webkit-touch-callout: none
-  -webkit-user-select: none
-  color: $accent-text
-  cursor: pointer
-  display: block
-  font-size: 28px
-  left: 10px
-  padding: .4em
-  position: absolute
-  text-align: center
-  text-transform: uppercase
-  top: 0
-  transition: all .5s ease-in-out
-  user-select: none
-
-#toggle
-  &:checked + label
-    color: $glow-text
-
-  &:checked ~ .mobile-links
-    display: block
-    opacity: 1
-    transition: all .5s ease-in-out

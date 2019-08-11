@@ -1,0 +1,26 @@
+// ----------------------------------------------------
+// Indice
+// ----------------------------------------------------
+.indice
+  border-radius: .5em
+  padding: 1.5em 0
+  text-align: right
+  width: 25vw
+
+  @media #{$tablet}
+    margin-left: -2em
+
+
+  a
+    color: $indice-link
+    display: block
+    font-weight: bold
+    padding: .2em 0
+
+    &:hover
+      color: $indice-hover
+
+  &.fixed
+    font-weight: 300
+    position: fixed
+    top: 10px

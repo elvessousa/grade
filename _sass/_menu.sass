@@ -1,0 +1,64 @@
+// ----------------------------------------------------
+// Menu functionality
+// ----------------------------------------------------
+#toggle,
+.toggle
+  display: none
+
+.mobile-links
+  background: lighten($content-link, 6.5%)
+  border-top: 1px solid $dark-border
+  left: 0
+  opacity: 0
+  padding: 0 !important
+  position: absolute
+  top: 3em
+  transition: all .5s ease-in-out
+  width: 100%
+
+  @media #{$desktop}
+    display: none
+
+  @media #{$phone}
+    display: block
+
+  @media #{$tablet}
+    display: block
+
+
+  a
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    border-bottom: 1px solid $dark-border
+    box-sizing: border-box
+    display: block
+    font-weight: 300
+    padding: 5px 0 !important
+    text-align: center
+    text-decoration: none
+    width: 100vw
+
+.toggle
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  color: $accent-text
+  cursor: pointer
+  display: block
+  font-size: 28px
+  left: 10px
+  padding: .4em
+  position: absolute
+  text-align: center
+  text-transform: uppercase
+  top: 0
+  transition: all .5s ease-in-out
+  user-select: none
+
+#toggle
+  &:checked + label
+    color: $glow-text
+
+  &:checked ~ .mobile-links
+    display: block
+    opacity: 1
+    transition: all .5s ease-in-out
