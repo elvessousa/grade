@@ -15,8 +15,9 @@ Para usá-la, copie o arquivo para o seu projeto, o referencie na página e seja
   <link rel="stylesheet" href="path/to/css/grade.css">
 {% endhighlight %}
 
-
-[**Baixar zip**](https://github.com/elvessousa/grade/archive/master.zip)
+<script src="https://gumroad.com/js/gumroad.js"></script>
+<a class="gumroad-button" href="https://gum.co/grade-css-grid" target="_blank">Download "Grade"</a>
+<!-- [**Baixar zip**](https://github.com/elvessousa/grade/archive/master.zip) -->
 [**Github repo**](https://github.com/elvessousa/grade)
 
 ---
