@@ -68,3 +68,7 @@ Like this:
 {% endhighlight %}
 
 {% include snippets.html %}
+
+#### That's all, folks!
+
+By the way, did you like the TOC at the side? [Click here](http://indice.elvessousa.com.br/) to get more info!

@@ -69,3 +69,7 @@ Assim:
 {% endhighlight %}
 
 {% include snippets-br.html %}
+
+#### Isto é tudo, pessoal!
+
+Aliás, gostou do índice ao lado? Se quiser saber mais sobre ele, [clique aqui](http://indice.elvessousa.com.br/)!
