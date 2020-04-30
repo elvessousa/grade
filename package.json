@@ -12,7 +12,9 @@
     "jshint": "^2.9.1",
     "gulp-sourcemaps": "^1.6.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-autoprefixer": "^7.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
