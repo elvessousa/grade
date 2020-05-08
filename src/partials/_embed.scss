@@ -1,0 +1,43 @@
+.grade {
+  .embed {
+    align-self: center;
+    display: block;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+
+    .item,
+    audio,
+    video,
+    iframe,
+    object {
+      @include pos;
+      @include size(100%, 100%);
+      border: 0;
+    }
+  }
+
+  .widescreen {
+    padding-bottom: 56.25%;
+  }
+
+  .phone {
+    padding-bottom: 178.5%;
+  }
+
+  .sd {
+    padding-bottom: 75%;
+  }
+
+  .square {
+    padding-bottom: 100%;
+  }
+
+  .cinema-wide {
+    padding-bottom: 43%;
+  }
+
+  .anamorphic {
+    padding-bottom: 41.9%;
+  }
+}

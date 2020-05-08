@@ -1,0 +1,19 @@
+.grade {
+  // ----------------------------------------------------
+  // Lines
+  // ----------------------------------------------------
+  .lines {
+    @include flexbox;
+    flex-flow: column wrap;
+    width: 100%;
+
+    > * {
+      @include flex(1, 1, 0);
+      box-sizing: border-box;
+    }
+
+    > li {
+      list-style: none;
+    }
+  }
+}

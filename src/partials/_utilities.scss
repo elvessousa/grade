@@ -1,0 +1,108 @@
+.grade {
+  // ----------------------------------------------------
+  // Direction
+  // ----------------------------------------------------
+  .reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .invert {
+    flex-direction: column-reverse !important;
+  }
+
+  // ----------------------------------------------------
+  // Alignment
+  // ----------------------------------------------------
+  .stretch,
+  .justify {
+    justify-content: space-between;
+  }
+
+  .distribute {
+    justify-content: space-around;
+  }
+
+  .fill {
+    align-self: stretch;
+  }
+
+  .to-left {
+    margin-right: auto !important;
+  }
+
+  .to-right {
+    margin-left: auto !important;
+  }
+
+  .to-top {
+    align-self: flex-start;
+  }
+
+  .to-bottom {
+    align-self: flex-end;
+  }
+
+  .center {
+    &.vertical {
+      align-self: center;
+    }
+
+    &.horizontal {
+      margin: auto;
+    }
+
+    &.all {
+      @include flexbox;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  // For devices
+  @for $i from 0 to length($medias) {
+    $query: unquote(nth($queries, $i + 1));
+    $media: unquote(nth($medias, $i + 1));
+
+    @media #{$query} {
+      .stretch-#{$media},
+      .justify-#{$media} {
+        justify-content: space-between;
+      }
+
+      .distribute-#{$media} {
+        justify-content: space-around;
+      }
+
+      .to-left-#{$media} {
+        margin-right: auto !important;
+      }
+
+      .to-right-#{$media} {
+        margin-left: auto !important;
+      }
+
+      .to-top-#{$media} {
+        align-self: flex-start;
+      }
+
+      .to-bottom-#{$media} {
+        align-self: flex-end;
+      }
+
+      .center-#{$media} {
+        &.vertical {
+          align-self: center;
+        }
+
+        &.horizontal {
+          margin: auto;
+        }
+
+        &.all {
+          @include flexbox;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
