@@ -1,0 +1,69 @@
+// ----------------------------------------------------
+// Generate widths mixin
+// ----------------------------------------------------
+@mixin generate-widths($media, $numbers, $fraction, $gutter) {
+  @for $i from 0 to length($numbers) {
+    $class: unquote(nth($numbers, $i + 1));
+    $fclass: unquote(nth($fraction, $i + 1));
+    $width: 100 / ($i + 1);
+    $unit: "%";
+    $suffix: "";
+
+    @if $media != "" {
+      $suffix: "-" + #{$media};
+    }
+
+    .#{$col-slug} {
+      &.#{$class}#{$suffix} {
+        > * {
+          @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}));
+
+          &:nth-child(#{$i + 1}n) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &.#{$fclass}#{$suffix} {
+        @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}) !important);
+        padding: $gutter / 2;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------
+// Media queries
+// ----------------------------------------------------
+.grade {
+  @for $i from 0 to length($medias) {
+    $query: unquote(nth($queries, $i + 1));
+    $media: unquote(nth($medias, $i + 1));
+
+    // Default widths
+    @include generate-widths("", $numbers, $fraction, $gutter);
+
+    @media #{$query} {
+      // Visibilities for each query
+      @include responsive-visibility($media);
+      @include responsive-invisibility($media);
+
+      // Column widths
+      @include generateWidths($media, $numbers, $fraction, $gutter);
+
+      // Hidden
+      .hidden-#{$media} {
+        display: none;
+      }
+
+      // Ordering
+      .first-#{$media} {
+        @include order(-1);
+      }
+
+      .last-#{$media} {
+        @include order(1);
+      }
+    }
+  }
+}
