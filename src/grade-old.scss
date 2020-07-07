@@ -1,0 +1,477 @@
+// -----------------------------------------------------------------------------
+//
+//   GRADE
+//   Creates the grid classes and utilities.
+//   Make sure you know what you're doing before altering this code.
+//
+// -----------------------------------------------------------------------------
+//
+//   - Container
+//   - Direction
+//   - Alignment
+//   - Columns
+//   - Widths for desktop
+//   - Widths for mobile
+//
+// -----------------------------------------------------------------------------
+@import 'gridvars';
+
+// ----------------------------------------------------
+// Main class
+// ----------------------------------------------------
+.grade {
+  img {
+    max-width: 100%;
+  }
+
+  // ----------------------------------------------------
+  // Direction
+  // ----------------------------------------------------
+  .reverse {
+    flex-direction: row-reverse !important;
+  }
+
+  .invert {
+    flex-direction: column-reverse !important;
+  }
+
+  // ----------------------------------------------------
+  // Alignment
+  // ----------------------------------------------------
+  .stretch,
+  .justify {
+    justify-content: space-between;
+  }
+
+  .distribute {
+    justify-content: space-around;
+  }
+
+  .fill {
+    align-self: stretch;
+  }
+
+  .to-left {
+    margin-right: auto !important;
+  }
+
+  .to-right {
+    margin-left: auto !important;
+  }
+
+  .to-top {
+    align-self: flex-start;
+  }
+
+  .to-bottom {
+    align-self: flex-end;
+  }
+
+  .center {
+    &.vertical {
+      align-self: center;
+    }
+
+    &.horizontal {
+      margin: auto;
+    }
+
+    &.all {
+      @include flexbox;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  // For devices
+  @for $i from 0 to length($medias) {
+    $query: unquote(nth($queries, $i + 1));
+    $media: unquote(nth($medias, $i + 1));
+
+    @media #{$query} {
+      .stretch-#{$media},
+      .justify-#{$media} {
+        justify-content: space-between;
+      }
+
+      .distribute-#{$media} {
+        justify-content: space-around;
+      }
+
+      .to-left-#{$media} {
+        margin-right: auto !important;
+      }
+
+      .to-right-#{$media} {
+        margin-left: auto !important;
+      }
+
+      .to-top-#{$media} {
+        align-self: flex-start;
+      }
+
+      .to-bottom-#{$media} {
+        align-self: flex-end;
+      }
+
+      .center-#{$media} {
+        &.vertical {
+          align-self: center;
+        }
+
+        &.horizontal {
+          margin: auto;
+        }
+
+        &.all {
+          @include flexbox;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  // ----------------------------------------------------
+  // Masonry
+  // ----------------------------------------------------
+  .#{$mason-slug} {
+    .item {
+      -moz-column-gap: $gutter / 2;
+      -webkit-column-gap: $gutter / 2;
+      box-sizing: border-box;
+      column-gap: $gutter / 2;
+      display: inline-block;
+      width: 100%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &.no-gutter {
+      .item {
+        -moz-column-gap: 0;
+        -webkit-column-gap: 0;
+        column-gap: 0;
+      }
+    }
+  }
+
+  // ----------------------------------------------------
+  // Columns
+  // ----------------------------------------------------
+  .#{$col-slug} {
+    @include flexbox;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+    width: 100%;
+
+    > * {
+      @include flex(1, 1, 0);
+      box-sizing: border-box;
+      margin-right: $gutter;
+      width: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    > li {
+      list-style: none;
+    }
+
+    &.no-gutter {
+      > * {
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+  // ----------------------------------------------------
+  // Lines
+  // ----------------------------------------------------
+  .lines {
+    @include flexbox;
+    flex-flow: column wrap;
+    width: 100%;
+
+    > * {
+      @include flex(1, 1, 0);
+      box-sizing: border-box;
+    }
+
+    > li {
+      list-style: none;
+    }
+  }
+
+  // ----------------------------------------------------
+  // Widths for desktop
+  // ----------------------------------------------------
+  @media #{$desktop} {
+    @for $i from 0 to length($numbers) {
+      $class: unquote(nth($numbers, $i + 1));
+      $fclass: unquote(nth($fraction, $i + 1));
+      $width: 100 / ($i + 1);
+      $unit: '%';
+
+      @include responsive-visibility(desktop);
+      @include responsive-invisibility(desktop);
+
+      .hidden-desktop {
+        display: none;
+      }
+
+      .first {
+        @include order(-1);
+      }
+
+      .last {
+        @include order(1);
+      }
+
+      .#{$col-slug} {
+        &.#{$class} {
+          > * {
+            @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}));
+          }
+
+          &:nth-child(#{$i + 1}n) {
+            margin-right: 0;
+          }
+        }
+
+        &.#{$fclass} {
+          @include flex(0, 0, calc(#{$width}#{$unit}) !important);
+        }
+
+        &.stretch {
+          &.#{$class} {
+            > * {
+              @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}));
+            }
+          }
+        }
+      }
+    }
+
+    @for $i from 0 to length($numbers) {
+      $class: unquote(nth($numbers, $i + 1));
+      $width: 100 / ($i + 1);
+      $unit: '%';
+
+      .#{$col-slug} {
+        .no-gutter {
+          &.#{$class} {
+            > * {
+              @include flex(0, 0, #{$width}#{$unit});
+            }
+          }
+
+          &.stretch {
+            &.#{$class} {
+              > * {
+                @include flex(0, 0, calc(#{$width}#{$unit}));
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @for $i from 0 to length($bricks) {
+      $mclass: unquote(nth($bricks, $i + 1));
+
+      .mason {
+        &.#{$mclass} {
+          @include mason($i + 1);
+        }
+      }
+    }
+
+    @for $i from 0 to length($multiply) {
+      $eclass: unquote(nth($multiply, $i + 1));
+
+      .#{$eclass} {
+        flex: ($i + 1) 1;
+      }
+    }
+  }
+
+  @for $i from 0 to length($medias) {
+    $query: unquote(nth($queries, $i + 1));
+    $media: unquote(nth($medias, $i + 1));
+
+    @media #{$query} {
+      @include responsive-visibility($media);
+      @include responsive-invisibility($media);
+
+      .hidden-#{$media} {
+        display: none !important;
+      }
+
+      .first-#{$media} {
+        @include order(-1);
+      }
+
+      .last-#{$media} {
+        @include order(1);
+      }
+
+      @for $i from 0 to length($numbers) {
+        $class: unquote(nth($numbers, $i + 1));
+        $fclass: unquote(nth($fraction, $i + 1));
+        $width: 100 / ($i + 1);
+        $unit: '%';
+
+        .#{$col-slug} {
+          &.#{$class}-#{$media} {
+            > * {
+              @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}));
+
+              &:nth-child(#{$i + 1}n) {
+                margin-right: 0;
+              }
+            }
+          }
+
+          &.#{$fclass}-#{$media} {
+            @include flex(
+              0,
+              0,
+              calc(#{$width}#{$unit} - #{$gutter}) !important
+            );
+            padding: $gutter / 2;
+          }
+
+          &.no-gutter {
+            .#{$fclass}-#{$media} {
+              @include flex(
+                0,
+                0,
+                calc(#{$width}#{$unit} - #{$gutter}) !important
+              );
+              padding: 0 !important;
+            }
+          }
+
+          &.stretch {
+            &.#{$class}-#{$media} {
+              > * {
+                @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}));
+              }
+            }
+          }
+        }
+      }
+
+      @for $i from 0 to length($numbers) {
+        $class: unquote(nth($numbers, $i + 1));
+        $width: 100 / ($i + 1);
+        $unit: '%';
+
+        .#{$col-slug} {
+          &.no-gutter {
+            &.#{$class}-#{$media} {
+              > * {
+                @include flex(0, 0, #{$width}#{$unit});
+                margin: 0 !important;
+              }
+            }
+
+            &.stretch {
+              &.#{$class}-#{$media} {
+                > * {
+                  @include flex(0, 0, calc(#{$width}#{$unit}));
+                  margin: 0 !important;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @for $i from 0 to length($bricks) {
+        $mclass: unquote(nth($bricks, $i + 1));
+
+        .mason {
+          &.#{$mclass}-#{$media} {
+            @include mason($i + 1);
+          }
+        }
+      }
+
+      @for $i from 0 to length($multiply) {
+        $eclass: unquote(nth($multiply, $i + 1));
+
+        .#{$eclass}-#{$media} {
+          flex: ($i + 1) 1;
+        }
+      }
+    }
+  }
+
+  .container {
+    padding: 1em;
+    width: $container-mini;
+
+    &.no-gutter {
+      padding: 0;
+    }
+
+    @media #{$tablet} {
+      margin: auto;
+      max-width: $container-tablet;
+      padding: 1em;
+    }
+
+    @media #{$desktop} {
+      margin: auto;
+      max-width: $container-desktop;
+      padding: 1em;
+    }
+  }
+
+  .embed {
+    align-self: center;
+    display: block;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+
+    .item,
+    audio,
+    video,
+    iframe,
+    object {
+      @include pos;
+      @include size(100%, 100%);
+      border: 0;
+    }
+  }
+
+  .widescreen {
+    padding-bottom: 56.25%;
+  }
+
+  .phone {
+    padding-bottom: 178.5%;
+  }
+
+  .sd {
+    padding-bottom: 75%;
+  }
+
+  .square {
+    padding-bottom: 100%;
+  }
+
+  .cinema-wide {
+    padding-bottom: 43%;
+  }
+
+  .anamorphic {
+    padding-bottom: 41.9%;
+  }
+}
