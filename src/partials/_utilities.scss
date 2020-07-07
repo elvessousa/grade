@@ -27,11 +27,11 @@
   }
 
   .to-left {
-    margin-right: auto !important;
+    margin-right: auto;
   }
 
   .to-right {
-    margin-left: auto !important;
+    margin-left: auto;
   }
 
   .to-top {
@@ -57,6 +57,7 @@
       justify-content: center;
     }
   }
+
   // For devices
   @for $i from 0 to length($medias) {
     $query: unquote(nth($queries, $i + 1));
@@ -95,6 +96,7 @@
 
         &.horizontal {
           margin: auto;
+          justify-content: center;
         }
 
         &.all {

@@ -4,8 +4,6 @@
   // ----------------------------------------------------
   .#{$mason-slug} {
     .item {
-      -moz-column-gap: $gutter / 2;
-      -webkit-column-gap: $gutter / 2;
       box-sizing: border-box;
       column-gap: $gutter / 2;
       display: inline-block;
@@ -18,8 +16,6 @@
 
     &.no-gutter {
       .item {
-        -moz-column-gap: 0;
-        -webkit-column-gap: 0;
         column-gap: 0;
       }
     }
