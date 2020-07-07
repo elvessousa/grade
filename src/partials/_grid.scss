@@ -10,7 +10,7 @@
     $suffix: "";
 
     @if $media != "" {
-      $suffix: "-" + #{$media};
+      $suffix: "-#{$media}";
     }
 
     .#{$col-slug} {
@@ -49,7 +49,7 @@
       @include responsive-invisibility($media);
 
       // Column widths
-      @include generateWidths($media, $numbers, $fraction, $gutter);
+      @include generate-widths($media, $numbers, $fraction, $gutter);
 
       // Hidden
       .hidden-#{$media} {

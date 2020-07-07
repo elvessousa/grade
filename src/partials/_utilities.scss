@@ -13,7 +13,9 @@
   // ----------------------------------------------------
   // Alignment
   // ----------------------------------------------------
-  .stretch,
+  .stretch > * {
+    flex-grow: 1 !important;
+  }
   .justify {
     justify-content: space-between;
   }
@@ -64,7 +66,10 @@
     $media: unquote(nth($medias, $i + 1));
 
     @media #{$query} {
-      .stretch-#{$media},
+      .stretch-#{$media} {
+        flex-grow: 1;
+      }
+
       .justify-#{$media} {
         justify-content: space-between;
       }
