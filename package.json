@@ -7,16 +7,13 @@
     "doc": "docs"
   },
   "dependencies": {
-    "gulp-ruby-sass": "^2.0.6",
-    "gulp": "^3.9.0",
-    "jshint": "^2.9.1",
-    "gulp-sourcemaps": "^1.6.0"
-  },
-  "devDependencies": {
-    "gulp-autoprefixer": "^7.0.1"
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.14.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/grade.scss dist/grade.css",
+    "minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/grade.min.css dist/grade.css",
+    "dist": "npm run compile && npm run minify"
   },
   "repository": {
     "type": "git",
