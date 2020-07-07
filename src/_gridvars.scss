@@ -1,13 +1,8 @@
 // ----------------------------------------------------
-// Variables
-// ----------------------------------------------------
-@import 'functions';
-
-// ----------------------------------------------------
 // Containers
 // ----------------------------------------------------
-$col-slug: 'columns';
-$mason-slug: 'mason';
+$col-slug: "columns";
+$mason-slug: "mason";
 
 // ----------------------------------------------------
 // Numbers
@@ -76,11 +71,11 @@ $gutter: 1.5em;
 // ----------------------------------------------------
 // Media queries
 // ----------------------------------------------------
-$phone: 'screen and (min-width: 15em) and (max-width: 47em)';
-$tablet: 'screen and (min-width: 47em) and (max-width: 61em)';
-$desktop: 'screen and (min-width: 61em)';
-$medias: phone tablet;
-$queries: $phone $tablet;
+$phone: "screen and (min-width: 15em) and (max-width: 47em)";
+$tablet: "screen and (min-width: 47em) and (max-width: 61em)";
+$desktop: "screen and (min-width: 61em)";
+$medias: desktop phone tablet;
+$queries: $desktop $phone $tablet;
 
 // ----------------------------------------------------
 // Containers
