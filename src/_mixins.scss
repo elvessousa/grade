@@ -38,6 +38,7 @@
   -webkit-order: $val;
   order: $val;
 }
+
 // ----------------------------------------------------
 // Visibility
 // ----------------------------------------------------
@@ -80,7 +81,7 @@
 }
 
 @mixin responsive-invisibility($class) {
-  $mediaclasses: mini phone tablet desktop;
+  $mediaclasses: phone tablet desktop;
 
   @each $item in $mediaclasses {
     @if $item != $class {
