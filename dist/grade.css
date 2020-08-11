@@ -1953,7 +1953,7 @@
 }
 
 .grade .mason .item img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .grade .mason.no-gutter .item {
