@@ -2138,4 +2138,51 @@
   }
 }
 
+.grade .embed {
+  align-self: center;
+  display: block;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.grade .embed .item,
+.grade .embed audio,
+.grade .embed video,
+.grade .embed iframe,
+.grade .embed object {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.grade .widescreen {
+  padding-bottom: 56.25%;
+}
+
+.grade .phone {
+  padding-bottom: 178.5%;
+}
+
+.grade .sd {
+  padding-bottom: 75%;
+}
+
+.grade .square {
+  padding-bottom: 100%;
+}
+
+.grade .cinema-wide {
+  padding-bottom: 43%;
+}
+
+.grade .anamorphic {
+  padding-bottom: 41.9%;
+}
+
 /*# sourceMappingURL=grade.css.map */
