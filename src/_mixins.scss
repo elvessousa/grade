@@ -119,3 +119,37 @@
   -webkit-column-count: $count;
   column-count: $count;
 }
+
+// ----------------------------------------------------
+// Generate widths mixin
+// ----------------------------------------------------
+@mixin generate-widths($media, $numbers, $fraction, $gutter) {
+  @for $i from 0 to length($numbers) {
+    $class: unquote(nth($numbers, $i + 1));
+    $fclass: unquote(nth($fraction, $i + 1));
+    $width: 100 / ($i + 1);
+    $unit: "%";
+    $suffix: "";
+
+    @if $media != "" {
+      $suffix: "-#{$media}";
+    }
+
+    .#{$col-slug} {
+      &.#{$class}#{$suffix} {
+        > * {
+          @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}));
+
+          &:nth-child(#{$i + 1}n) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &.#{$fclass}#{$suffix} {
+        @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}) !important);
+        padding: $gutter / 2;
+      }
+    }
+  }
+}
