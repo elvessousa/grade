@@ -8,6 +8,7 @@
 
     // Default widths
     @include generate-widths("", $numbers, $fraction, $gutter);
+    @include generate-bricks("", $bricks, $fraction, $gutter);
 
     @media #{$query} {
       // Visibilities for each query
@@ -16,6 +17,7 @@
 
       // Column widths
       @include generate-widths($media, $numbers, $fraction, $gutter);
+      @include generate-bricks($media, $bricks, $fraction, $gutter);
 
       // Hidden
       .hidden-#{$media} {

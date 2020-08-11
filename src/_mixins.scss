@@ -121,7 +121,7 @@
 }
 
 // ----------------------------------------------------
-// Generate widths mixin
+// Generate grid columns widths
 // ----------------------------------------------------
 @mixin generate-widths($media, $numbers, $fraction, $gutter) {
   @for $i from 0 to length($numbers) {
@@ -149,6 +149,26 @@
       &.#{$fclass}#{$suffix} {
         @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}) !important);
         padding: $gutter / 2;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------
+// Generate mason bricks
+// ----------------------------------------------------
+@mixin generate-bricks($media, $bricks, $fraction, $gutter) {
+  @for $i from 0 to length($bricks) {
+    $mclass: unquote(nth($bricks, $i + 1));
+    $suffix: "";
+
+    @if $media != "" {
+      $suffix: "-#{$media}";
+    }
+
+    .#{$mason-slug} {
+      &.#{$mclass}#{$suffix} {
+        @include mason($i + 1);
       }
     }
   }
