@@ -128,27 +128,35 @@
     $class: unquote(nth($numbers, $i + 1));
     $fclass: unquote(nth($fraction, $i + 1));
     $width: 100 / ($i + 1);
-    $unit: "%";
-    $suffix: "";
+    $unit: '%';
+    $suffix: '';
 
-    @if $media != "" {
-      $suffix: "-#{$media}";
+    @if $media != '' {
+      $suffix: '-#{$media}';
     }
 
     .#{$col-slug} {
       &.#{$class}#{$suffix} {
         > * {
-          @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}));
+          @include flex(1, 0, calc(#{$width}#{$unit} - #{$gutter}));
+        }
 
-          &:nth-child(#{$i + 1}n) {
-            margin-right: 0;
-          }
+        &:nth-child(#{$i + 1}n) {
+          margin-right: 0;
         }
       }
 
-      &.#{$fclass}#{$suffix} {
+      .#{$fclass}#{$suffix} {
         @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}) !important);
         padding: $gutter / 2;
+      }
+
+      &.stretch {
+        &.#{$class}#{$suffix} {
+          > * {
+            @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}));
+          }
+        }
       }
     }
   }
@@ -157,18 +165,38 @@
 // ----------------------------------------------------
 // Generate mason bricks
 // ----------------------------------------------------
-@mixin generate-bricks($media, $bricks, $fraction, $gutter) {
+@mixin generate-bricks($media, $bricks) {
   @for $i from 0 to length($bricks) {
     $mclass: unquote(nth($bricks, $i + 1));
-    $suffix: "";
+    $suffix: '';
 
-    @if $media != "" {
-      $suffix: "-#{$media}";
+    @if $media != '' {
+      $suffix: '-#{$media}';
     }
 
     .#{$mason-slug} {
       &.#{$mclass}#{$suffix} {
         @include mason($i + 1);
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------
+// Generate multiplier classes
+// ----------------------------------------------------
+@mixin generate-multiples($media, $multiply) {
+  @for $i from 0 to length($multiply) {
+    $mclass: unquote(nth($multiply, $i + 1));
+    $suffix: '';
+
+    @if $media != '' {
+      $suffix: '-#{$media}';
+    }
+
+    .#{$col-slug} {
+      .#{$mclass}#{$suffix} {
+        flex-grow: ($i + 1) !important;
       }
     }
   }

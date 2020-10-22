@@ -506,7 +506,7 @@
         <!-- Nested grid -->
         <h3>Nested grid</h3>
         <p>Grid inception, four levels allowed.</p>
-        <div class="columns no-gutter">
+        <div class="inception columns no-gutter">
           <div class="item">
             <div class="columns no-gutter">
               <div class="item quarter"></div>
@@ -915,6 +915,16 @@
       .grid-demo .columns .item:hover {
         background: #000;
         color: #fff;
+      }
+
+      .grid-demo .columns .item .columns { 
+        border-top: 5px solid #fff;
+        border-bottom: 5px solid #fff;
+        border-radius: 0;
+      }
+
+      .inception div {
+        padding: 0 !important;
       }
 
       .position-demo {
