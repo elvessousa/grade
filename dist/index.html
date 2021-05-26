@@ -4,68 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grade Example</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="grade.min.css" />
+    <link rel="stylesheet" href="css/example-page.css" />
   </head>
   <body class="grade">
     <main>
       <h1>Grade</h1>
-      <h3>Browsers</h3>
-      <p>
-        Any modern browser able to render Flexbox properly can use this grid.
-      </p>
-      <div class="columns three-tablet three-phone">
-        <div class="browser">
-          <i class="icon-ie"></i>
-          <span>11*</span>
-        </div>
-        <div class="browser">
-          <i class="icon-edge"></i>
-          <span>12+</span>
-        </div>
-        <div class="browser">
-          <i class="icon-safari"></i>
-          <span>9+</span>
-        </div>
-        <div class="browser">
-          <i class="icon-firefox"></i>
-          <span>28+</span>
-        </div>
-        <div class="browser">
-          <i class="icon-chrome"></i>
-          <span>29+</span>
-        </div>
-        <div class="browser">
-          <i class="icon-opera"></i>
-          <span>12.1+</span>
-        </div>
-      </div>
-      <small
-        >* Some small issues may occur since this browser is using old
-        technology.</small
-      >
+      <article>
+        <h3>Browsers</h3>
+        <p>
+          Any modern browser able to render Flexbox properly can use this grid.
+          <br />
+          <small>
+            * Some small issues may occur since this browser is using old
+            technology.
+          </small>
+        </p>
 
-      <!-- Columns -->
-      <h3>Columns</h3>
-      <p>Define the number of columns once, not on every element.</p>
-      <!-- Auto -->
-      <h4>Automatic columns</h4>
-      <p>Creates columns automatically, according to the number of elements.</p>
-      <div class="columns">
-        <div class="content">
-          <strong>Column 01</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <!-- Columns -->
+        <h3>Columns</h3>
+        <p>Define the number of columns once, not on every element.</p>
+        <!-- Auto -->
+        <h4>Automatic columns</h4>
+        <p>
+          Creates columns automatically, according to the number of elements.
+        </p>
+        <div class="columns">
+          <div class="content">
+            <strong>Column 01</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="content">
+            <strong>Column 02</strong>
+            <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
+          </div>
+          <div class="content">
+            <strong>Column 03</strong>
+            <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
+          </div>
         </div>
-        <div class="content">
-          <strong>Column 02</strong>
-          <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
-        </div>
-        <div class="content">
-          <strong>Column 03</strong>
-          <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
-        </div>
-      </div>
-      <!-- Code -->
-      <xmp>
+        <!-- Code -->
+        <xmp>
     <div class="columns">
       <div class="your-class">
         <strong>Column 01</strong>
@@ -82,29 +66,29 @@
     </div>
   </xmp>
 
-      <!-- Fixed -->
-      <h4>Fixed columns</h4>
-      <p>
-        Fixes the number of columns. You can use
-        <code>[number]-[query]</code> to specify a different number in another
-        window size.
-      </p>
-      <div class="columns three one-phone">
-        <div class="content">
-          <strong>Column 01</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <!-- Fixed -->
+        <h4>Fixed columns</h4>
+        <p>
+          Fixes the number of columns. You can use
+          <code>[number]-[query]</code> to specify a different number in another
+          window size.
+        </p>
+        <div class="columns three one-phone">
+          <div class="content">
+            <strong>Column 01</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="content">
+            <strong>Column 02</strong>
+            <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
+          </div>
+          <div class="content">
+            <strong>Column 03</strong>
+            <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
+          </div>
         </div>
-        <div class="content">
-          <strong>Column 02</strong>
-          <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
-        </div>
-        <div class="content">
-          <strong>Column 03</strong>
-          <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
-        </div>
-      </div>
-      <!-- Code -->
-      <xmp>
+        <!-- Code -->
+        <xmp>
     <div class="columns three one-phone">
       <div class="your-class">
         <strong>Column 01</strong>
@@ -121,39 +105,41 @@
     </div>
   </xmp>
 
-      <!-- Stretch -->
-      <h4>Stretch columns</h4>
-      <p>
-        In case of an odd number, or lack of columns to fill your layout, you
-        can use this class to extend the remaining columns to fill the gaps.
-      </p>
-      <div class="four three-tablet two-phone stretch columns">
-        <div class="content">
-          <strong>Column 01</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <!-- Stretch -->
+        <h4>Stretch columns</h4>
+        <p>
+          In case of an odd number, or lack of columns to fill your layout, you
+          can use this class to extend the remaining columns to fill the gaps.
+        </p>
+        <div class="four three-tablet two-phone stretch columns">
+          <div class="content">
+            <strong>Column 01</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="content">
+            <strong>Column 02</strong>
+            <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
+          </div>
+          <div class="content">
+            <strong>Column 03</strong>
+            <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
+          </div>
+          <div class="content">
+            <strong>Column 04</strong>
+            <p>
+              A nobis, dignissimos ipsam. Facere sequi, corrupti blanditiis?
+            </p>
+          </div>
+          <div class="content">
+            <strong>Column 05</strong>
+            <p>Fuga dolorum distinctio voluptatem nesciunt distinctio nam.</p>
+          </div>
+          <div class="content">
+            <strong>Column 06</strong>
+            <p>Nam, quaerat blanditiis hic consequatur, libero non!</p>
+          </div>
         </div>
-        <div class="content">
-          <strong>Column 02</strong>
-          <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
-        </div>
-        <div class="content">
-          <strong>Column 03</strong>
-          <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
-        </div>
-        <div class="content">
-          <strong>Column 04</strong>
-          <p>A nobis, dignissimos ipsam. Facere sequi, corrupti blanditiis?</p>
-        </div>
-        <div class="content">
-          <strong>Column 05</strong>
-          <p>Fuga dolorum distinctio voluptatem nesciunt distinctio nam.</p>
-        </div>
-        <div class="content">
-          <strong>Column 06</strong>
-          <p>Nam, quaerat blanditiis hic consequatur, libero non!</p>
-        </div>
-      </div>
-      <xmp>
+        <xmp>
     <div class="four three-tablet two-phone stretch columns">
       <div class="content">
         <strong>Column 01</strong>
@@ -182,36 +168,38 @@
     </div>
   </xmp>
 
-      <!-- Stretch -->
-      <h4>Justify columns</h4>
-      <p>Justify the columns to use all the space available in the row.</p>
-      <div class="four three-tablet two-phone justify columns">
-        <div class="content">
-          <strong>Column 01</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <!-- Stretch -->
+        <h4>Justify columns</h4>
+        <p>Justify the columns to use all the space available in the row.</p>
+        <div class="four three-tablet two-phone justify columns">
+          <div class="content">
+            <strong>Column 01</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="content">
+            <strong>Column 02</strong>
+            <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
+          </div>
+          <div class="content">
+            <strong>Column 03</strong>
+            <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
+          </div>
+          <div class="content">
+            <strong>Column 04</strong>
+            <p>
+              A nobis, dignissimos ipsam. Facere sequi, corrupti blanditiis?
+            </p>
+          </div>
+          <div class="content">
+            <strong>Column 05</strong>
+            <p>Fuga dolorum distinctio voluptatem nesciunt distinctio nam.</p>
+          </div>
+          <div class="content">
+            <strong>Column 06</strong>
+            <p>Nam, quaerat blanditiis hic consequatur, libero non!</p>
+          </div>
         </div>
-        <div class="content">
-          <strong>Column 02</strong>
-          <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
-        </div>
-        <div class="content">
-          <strong>Column 03</strong>
-          <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
-        </div>
-        <div class="content">
-          <strong>Column 04</strong>
-          <p>A nobis, dignissimos ipsam. Facere sequi, corrupti blanditiis?</p>
-        </div>
-        <div class="content">
-          <strong>Column 05</strong>
-          <p>Fuga dolorum distinctio voluptatem nesciunt distinctio nam.</p>
-        </div>
-        <div class="content">
-          <strong>Column 06</strong>
-          <p>Nam, quaerat blanditiis hic consequatur, libero non!</p>
-        </div>
-      </div>
-      <xmp>
+        <xmp>
     <div class="four three-tablet two-phone justify columns">
       <div class="content">
         <strong>Column 01</strong>
@@ -240,72 +228,76 @@
     </div>
   </xmp>
 
-      <h4>Distribute columns</h4>
-      <p>Distribute columns evenly in the row.</p>
-      <div class="four three-tablet two-phone distribute columns">
-        <div class="content">
-          <strong>Column 01</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <h4>Distribute columns</h4>
+        <p>Distribute columns evenly in the row.</p>
+        <div class="four three-tablet two-phone distribute columns">
+          <div class="content">
+            <strong>Column 01</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="content">
+            <strong>Column 02</strong>
+            <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
+          </div>
+          <div class="content">
+            <strong>Column 03</strong>
+            <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
+          </div>
+          <div class="content">
+            <strong>Column 04</strong>
+            <p>
+              A nobis, dignissimos ipsam. Facere sequi, corrupti blanditiis?
+            </p>
+          </div>
+          <div class="content">
+            <strong>Column 05</strong>
+            <p>Fuga dolorum distinctio voluptatem nesciunt distinctio nam.</p>
+          </div>
+          <div class="content">
+            <strong>Column 06</strong>
+            <p>Nam, quaerat blanditiis hic consequatur, libero non!</p>
+          </div>
         </div>
-        <div class="content">
-          <strong>Column 02</strong>
-          <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
-        </div>
-        <div class="content">
-          <strong>Column 03</strong>
-          <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
-        </div>
-        <div class="content">
-          <strong>Column 04</strong>
-          <p>A nobis, dignissimos ipsam. Facere sequi, corrupti blanditiis?</p>
-        </div>
-        <div class="content">
-          <strong>Column 05</strong>
-          <p>Fuga dolorum distinctio voluptatem nesciunt distinctio nam.</p>
-        </div>
-        <div class="content">
-          <strong>Column 06</strong>
-          <p>Nam, quaerat blanditiis hic consequatur, libero non!</p>
-        </div>
-      </div>
 
-      <!-- Code -->
-      <xmp>
+        <!-- Code -->
+        <xmp>
     <div class="four three-tablet two-phone distribute columns">
       [your html]
     </div>
   </xmp>
-      <!-- No gutter -->
-      <h4>No gutter</h4>
-      <p>Sometimes the closer the better.</p>
-      <div class="four three-tablet two-phone stretch columns no-gutter">
-        <div class="content">
-          <strong>Column 01</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <!-- No gutter -->
+        <h4>No gutter</h4>
+        <p>Sometimes the closer the better.</p>
+        <div class="four three-tablet two-phone stretch columns no-gutter">
+          <div class="content">
+            <strong>Column 01</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="content">
+            <strong>Column 02</strong>
+            <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
+          </div>
+          <div class="content">
+            <strong>Column 03</strong>
+            <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
+          </div>
+          <div class="content">
+            <strong>Column 04</strong>
+            <p>
+              A nobis, dignissimos ipsam. Facere sequi, corrupti blanditiis?
+            </p>
+          </div>
+          <div class="content">
+            <strong>Column 05</strong>
+            <p>Fuga dolorum distinctio voluptatem nesciunt distinctio nam.</p>
+          </div>
+          <div class="content">
+            <strong>Column 06</strong>
+            <p>Nam, quaerat blanditiis hic consequatur, libero non!</p>
+          </div>
         </div>
-        <div class="content">
-          <strong>Column 02</strong>
-          <p>Pariatur adipisci non, blanditiis ad dolor fugit repudiandae.</p>
-        </div>
-        <div class="content">
-          <strong>Column 03</strong>
-          <p>Placeat, sequi, facere. Repellendus blanditiis dolor.</p>
-        </div>
-        <div class="content">
-          <strong>Column 04</strong>
-          <p>A nobis, dignissimos ipsam. Facere sequi, corrupti blanditiis?</p>
-        </div>
-        <div class="content">
-          <strong>Column 05</strong>
-          <p>Fuga dolorum distinctio voluptatem nesciunt distinctio nam.</p>
-        </div>
-        <div class="content">
-          <strong>Column 06</strong>
-          <p>Nam, quaerat blanditiis hic consequatur, libero non!</p>
-        </div>
-      </div>
-      <!-- Code -->
-      <xmp>
+        <!-- Code -->
+        <xmp>
     <div class="four three-tablet two-phone stretch columns no-gutter">
       <div class="your-class">
         <strong>Column 01</strong>
@@ -334,31 +326,31 @@
     </div>
   </xmp>
 
-      <!-- Lines -->
-      <section class="lines-section">
-        <h3>Lines</h3>
-        <p>Define the number of lines once, not on every element.</p>
-        <!-- Auto -->
-        <h4>Automatic lines</h4>
-        <p>
-          Creates columns automatically, according to the number of elements.
-        </p>
-        <div class="columns three" style="height: 40vh;">
-          <div class="content lines">
-            <div><strong>Line 01</strong></div>
-            <div><strong>Line 02</strong></div>
-            <div><strong>Line 03</strong></div>
+        <!-- Lines -->
+        <section class="lines-section">
+          <h3>Lines</h3>
+          <p>Define the number of lines once, not on every element.</p>
+          <!-- Auto -->
+          <h4>Automatic lines</h4>
+          <p>
+            Creates columns automatically, according to the number of elements.
+          </p>
+          <div class="columns three" style="height: 40vh">
+            <div class="content lines">
+              <div><strong>Line 01</strong></div>
+              <div><strong>Line 02</strong></div>
+              <div><strong>Line 03</strong></div>
+            </div>
+            <div class="content lines">
+              <div><strong>Line 01</strong></div>
+              <div><strong>Line 02</strong></div>
+            </div>
+            <div class="content lines">
+              <div><strong>Line 01</strong></div>
+            </div>
           </div>
-          <div class="content lines">
-            <div><strong>Line 01</strong></div>
-            <div><strong>Line 02</strong></div>
-          </div>
-          <div class="content lines">
-            <div><strong>Line 01</strong></div>
-          </div>
-        </div>
-        <!-- Code -->
-        <xmp>
+          <!-- Code -->
+          <xmp>
       <div class="columns three" style="height: 40vh;">
         <div class="content lines">
           <div><strong>Line 01</strong></div>
@@ -374,54 +366,54 @@
         </div>
       </div>
     </xmp>
-      </section>
+        </section>
 
-      <!-- Grid -->
-      <h3>Grid</h3>
-      <p>Use a class only where you need it.</p>
-      <h4>Divide</h4>
-      <div class="grid-demo">
-        <div class="columns no-gutter">
-          <div class="item quarter">quarter</div>
-          <div class="item"></div>
-          <div class="item quarter">quarter</div>
-        </div>
-        <xmp>
+        <!-- Grid -->
+        <h3>Grid</h3>
+        <p>Use a class only where you need it.</p>
+        <h4>Divide</h4>
+        <div class="grid-demo">
+          <div class="columns no-gutter">
+            <div class="item quarter">quarter</div>
+            <div class="item"></div>
+            <div class="item quarter">quarter</div>
+          </div>
+          <xmp>
       <div class="columns no-gutter">
         <div class="item quarter">quarter</div>
         <div class="item"></div>
         <div class="item quarter">quarter</div>
       </div>
     </xmp>
-        <div class="columns no-gutter">
-          <div class="item"></div>
-          <div class="item half">half</div>
-          <div class="item"></div>
-        </div>
-        <xmp>
+          <div class="columns no-gutter">
+            <div class="item"></div>
+            <div class="item half">half</div>
+            <div class="item"></div>
+          </div>
+          <xmp>
       <div class="columns no-gutter">
         <div class="item"></div>
         <div class="item half">half</div>
         <div class="item"></div>
       </div>
     </xmp>
-        <div class="columns no-gutter">
-          <div class="item seventh">seventh</div>
-          <div class="item"></div>
-        </div>
-        <xmp>
+          <div class="columns no-gutter">
+            <div class="item seventh">seventh</div>
+            <div class="item"></div>
+          </div>
+          <xmp>
       <div class="columns no-gutter">
         <div class="item seventh">seventh</div>
         <div class="item"></div>
       </div>
     </xmp>
-        <div class="columns stretch no-gutter">
-          <div class="item eighth">eighth</div>
-          <div class="item"></div>
-          <div class="item half">half</div>
-          <div class="item eleventh">eleventh</div>
-        </div>
-        <xmp>
+          <div class="columns stretch no-gutter">
+            <div class="item eighth">eighth</div>
+            <div class="item"></div>
+            <div class="item half">half</div>
+            <div class="item eleventh">eleventh</div>
+          </div>
+          <xmp>
       <div class="columns stretch no-gutter">
         <div class="item eighth">eighth</div>
         <div class="item"></div>
@@ -429,14 +421,14 @@
         <div class="item eleventh">eleventh</div>
       </div>
     </xmp>
-        <h4>Multiply</h4>
-        <div class="columns stretch no-gutter">
-          <div class="item"></div>
-          <div class="item ten-times">ten-times</div>
-          <div class="item"></div>
-          <div class="item eleventh">eleventh</div>
-        </div>
-        <xmp>
+          <h4>Multiply</h4>
+          <div class="columns stretch no-gutter">
+            <div class="item"></div>
+            <div class="item ten-times">ten-times</div>
+            <div class="item"></div>
+            <div class="item eleventh">eleventh</div>
+          </div>
+          <xmp>
       <div class="columns stretch no-gutter">
         <div class="item"></div>
         <div class="item ten-times">ten-times</div>
@@ -444,13 +436,13 @@
         <div class="item eleventh">eleventh</div>
       </div>
     </xmp>
-        <div class="columns no-gutter">
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item three-times">three-times</div>
-        </div>
-        <xmp>
+          <div class="columns no-gutter">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item three-times">three-times</div>
+          </div>
+          <xmp>
       <div class="columns no-gutter">
         <div class="item"></div>
         <div class="item"></div>
@@ -459,19 +451,19 @@
       </div>
     </xmp>
 
-        <!-- Reordering -->
-        <h3>Reordering</h3>
-        <p>Use a class only where you need it.</p>
-        <div class="columns no-gutter">
-          <div class="item">1</div>
-          <div class="item">2</div>
-          <div class="item">3</div>
-          <div class="item">4</div>
-          <div class="item">5</div>
-          <div class="item">6</div>
-          <div class="item first first-phone">7</div>
-        </div>
-        <xmp>
+          <!-- Reordering -->
+          <h3>Reordering</h3>
+          <p>Use a class only where you need it.</p>
+          <div class="columns no-gutter">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item first first-phone">7</div>
+          </div>
+          <xmp>
       <div class="columns no-gutter">
         <div class="item">1</div>
         <div class="item">2</div>
@@ -482,16 +474,16 @@
         <div class="item first first-phone">7</div>
       </div>
     </xmp>
-        <div class="columns no-gutter">
-          <div class="item last last-phone">1</div>
-          <div class="item">2</div>
-          <div class="item">3</div>
-          <div class="item">4</div>
-          <div class="item">5</div>
-          <div class="item">6</div>
-          <div class="item">7</div>
-        </div>
-        <xmp>
+          <div class="columns no-gutter">
+            <div class="item last last-phone">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+          </div>
+          <xmp>
       <div class="columns no-gutter">
         <div class="item last last-phone">1</div>
         <div class="item">2</div>
@@ -503,38 +495,38 @@
       </div>
     </xmp>
 
-        <!-- Nested grid -->
-        <h3>Nested grid</h3>
-        <p>Grid inception, four levels allowed.</p>
-        <div class="inception columns no-gutter">
-          <div class="item">
-            <div class="columns no-gutter">
-              <div class="item quarter"></div>
-              <div class="item">
-                <div class="columns no-gutter">
-                  <div class="item eighth"></div>
-                  <div class="item"></div>
-                  <div class="item"></div>
+          <!-- Nested grid -->
+          <h3>Nested grid</h3>
+          <p>Grid inception, four levels allowed.</p>
+          <div class="inception columns no-gutter">
+            <div class="item">
+              <div class="columns no-gutter">
+                <div class="item quarter"></div>
+                <div class="item">
+                  <div class="columns no-gutter">
+                    <div class="item eighth"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="item"></div>
-          <div class="item half">
-            <div class="columns no-gutter">
-              <div class="item"></div>
-              <div class="item half">
-                <div class="columns no-gutter">
-                  <div class="item eighth"></div>
-                  <div class="item"></div>
-                  <div class="item"></div>
+            <div class="item"></div>
+            <div class="item half">
+              <div class="columns no-gutter">
+                <div class="item"></div>
+                <div class="item half">
+                  <div class="columns no-gutter">
+                    <div class="item eighth"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                  </div>
                 </div>
+                <div class="item"></div>
               </div>
-              <div class="item"></div>
             </div>
           </div>
-        </div>
-        <xmp>
+          <xmp>
       <div class="columns no-gutter">
         <div class="item">
           <div class="columns no-gutter">
@@ -552,28 +544,29 @@
         </div>
       </div>
     </xmp>
-      </div>
+        </div>
 
-      <!-- Positioning -->
-      <h3>Positioning</h3>
-      <p>Use a class only where you need it.</p>
-      <div class="position-demo center all block columns">
-        <div class="stuff to-top border text-center">
-          <h4>On top</h4>
-          <small>This box has the <code>to-top</code> class.</small>
+        <!-- Positioning -->
+        <h3>Positioning</h3>
+        <p>Use a class only where you need it.</p>
+        <div class="position-demo center all block columns">
+          <div class="stuff to-top border text-center">
+            <h4>On top</h4>
+            <small>This box has the <code>to-top</code> class.</small>
+          </div>
+          <div class="stuff border text-center">
+            <h4>Center</h4>
+            <small
+              >The container has the <code>center all</code> classes on
+              it.</small
+            >
+          </div>
+          <div class="stuff to-bottom border text-center">
+            <h4>Bottom</h4>
+            <small>This box has the <code>to-bottom</code> class.</small>
+          </div>
         </div>
-        <div class="stuff border text-center">
-          <h4>Center</h4>
-          <small
-            >The container has the <code>center all</code> classes on it.</small
-          >
-        </div>
-        <div class="stuff to-bottom border text-center">
-          <h4>Bottom</h4>
-          <small>This box has the <code>to-bottom</code> class.</small>
-        </div>
-      </div>
-      <xmp>
+        <xmp>
     <div class="position-demo center all block columns">
       <div class="stuff to-top border text-center">
         <h4>On top</h4>
@@ -591,18 +584,18 @@
       </div>
     </div>
   </xmp>
-      <br />
-      <div class="position-demo center all block columns">
-        <div class="stuff to-left border quarter text-center">
-          <h4>To the left</h4>
-          <small>This box has the <code>to-left</code> class.</small>
+        <br />
+        <div class="position-demo center all block columns">
+          <div class="stuff to-left border quarter text-center">
+            <h4>To the left</h4>
+            <small>This box has the <code>to-left</code> class.</small>
+          </div>
+          <div class="stuff to-right border quarter text-center">
+            <h4>To the right</h4>
+            <small>This box has the <code>to-right</code> class.</small>
+          </div>
         </div>
-        <div class="stuff to-right border quarter text-center">
-          <h4>To the right</h4>
-          <small>This box has the <code>to-right</code> class.</small>
-        </div>
-      </div>
-      <xmp>
+        <xmp>
     <div class="position-demo center all block columns">
       <div class="stuff to-left border quarter text-center">
         <h4>To the left</h4>
@@ -615,45 +608,45 @@
     </div>
   </xmp>
 
-      <!-- Visibility -->
-      <h3>Visibility</h3>
-      <p>Hide and show it with class. Literally.</p>
-      <div class="grid-demo">
-        <div class="columns">
-          <div class="visible-phone">
-            <h1>
+        <!-- Visibility -->
+        <h3>Visibility</h3>
+        <p>Hide and show it with class. Literally.</p>
+        <div class="grid-demo">
+          <div class="columns">
+            <div class="visible-phone">
+              <h1>
+                <i class="icon-mobile"></i>
+              </h1>
+              <p class="text-center">Visible phone</p>
+            </div>
+            <div class="visible-tablet">
+              <h1>
+                <i class="icon-tablet"></i>
+              </h1>
+              <p class="text-center">Visible tablet</p>
+            </div>
+            <div class="visible-desktop">
+              <h1>
+                <i class="icon-display"></i>
+              </h1>
+              <p class="text-center">Visible desktop</p>
+            </div>
+          </div>
+          <div class="columns text-center visibility">
+            <p class="hidden-phone">
               <i class="icon-mobile"></i>
-            </h1>
-            <p class="text-center">Visible phone</p>
-          </div>
-          <div class="visible-tablet">
-            <h1>
+              <small>Hidden on phones</small>
+            </p>
+            <p class="hidden-tablet">
               <i class="icon-tablet"></i>
-            </h1>
-            <p class="text-center">Visible tablet</p>
-          </div>
-          <div class="visible-desktop">
-            <h1>
+              <small>Hidden on tablet</small>
+            </p>
+            <p class="hidden-desktop">
               <i class="icon-display"></i>
-            </h1>
-            <p class="text-center">Visible desktop</p>
+              <small>Hidden on desktop</small>
+            </p>
           </div>
-        </div>
-        <div class="columns text-center visibility">
-          <p class="hidden-phone">
-            <i class="icon-mobile"></i>
-            <small>Hidden on phones</small>
-          </p>
-          <p class="hidden-tablet">
-            <i class="icon-tablet"></i>
-            <small>Hidden on tablet</small>
-          </p>
-          <p class="hidden-desktop">
-            <i class="icon-display"></i>
-            <small>Hidden on desktop</small>
-          </p>
-        </div>
-        <xmp>
+          <xmp>
       <div class="visible-phone">
         <h1>
           <i class="icon-mobile"></i>
@@ -673,7 +666,7 @@
         <p class="text-center">Visible desktop</p>
       </div>
     </xmp>
-        <xmp>
+          <xmp>
       <p class="hidden-phone">
         <i class="icon-mobile"></i>
         <small>Hidden on phones</small>
@@ -687,63 +680,74 @@
         <small>Hidden on desktop</small>
       </p>
     </xmp>
-      </div>
+        </div>
 
-      <!-- Masonry -->
-      <h3>Masonry</h3>
-      <p>Show your images in columns, without any javascript.</p>
-      <div class="mason three three-tablet two-phone">
-        <div class="item">
-          <img
-            src="https://grade.elvessousa.com.br/img/bible.jpeg"
-            alt="Image"
-          />
+        <!-- Masonry -->
+        <h3>Masonry</h3>
+        <p>Show your images in columns, without any javascript.</p>
+        <div class="mason three three-tablet two-phone">
+          <div class="item">
+            <img
+              src="https://grade.elvessousa.com.br/img/bible.jpeg"
+              alt="Image"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="https://grade.elvessousa.com.br/img/girl.jpeg"
+              alt="Image"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="https://grade.elvessousa.com.br/img/tower.jpeg"
+              alt="Image"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="https://grade.elvessousa.com.br/img/car.jpeg"
+              alt="Image"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="https://grade.elvessousa.com.br/img/rocks.jpeg"
+              alt="Image"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="https://grade.elvessousa.com.br/img/sea.jpeg"
+              alt="Image"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="https://grade.elvessousa.com.br/img/building.jpeg"
+              alt="Image"
+            />
+          </div>
+          <div class="item">
+            <img
+              src="https://grade.elvessousa.com.br/img/tv.jpeg"
+              alt="Image"
+            />
+          </div>
         </div>
-        <div class="item">
-          <img
-            src="https://grade.elvessousa.com.br/img/girl.jpeg"
-            alt="Image"
-          />
-        </div>
-        <div class="item">
-          <img
-            src="https://grade.elvessousa.com.br/img/tower.jpeg"
-            alt="Image"
-          />
-        </div>
-        <div class="item">
-          <img src="https://grade.elvessousa.com.br/img/car.jpeg" alt="Image" />
-        </div>
-        <div class="item">
-          <img
-            src="https://grade.elvessousa.com.br/img/rocks.jpeg"
-            alt="Image"
-          />
-        </div>
-        <div class="item">
-          <img src="https://grade.elvessousa.com.br/img/sea.jpeg" alt="Image" />
-        </div>
-        <div class="item">
-          <img
-            src="https://grade.elvessousa.com.br/img/building.jpeg"
-            alt="Image"
-          />
-        </div>
-        <div class="item">
-          <img src="https://grade.elvessousa.com.br/img/tv.jpeg" alt="Image" />
-        </div>
-      </div>
-      <xmp>
+        <xmp>
     <div class="mason three three-tablet two-phone">
       [your html here]
     </div>
   </xmp>
 
-      <!-- Embeds -->
-      <section class="embeds">
-        <h3>Embeds</h3>
-        <p>Paste your embed, tell the proportion and boom... It just works.</p>
-        <xmp>
+        <!-- Embeds -->
+        <section class="embeds">
+          <h3>Embeds</h3>
+          <p>
+            Paste your embed, tell the proportion and boom... It just works.
+          </p>
+          <xmp>
       <div class="embed [widescreen | sd | phone | cinema-wide | square]">
         <iframe
           width="560"
@@ -754,194 +758,73 @@
         ></iframe>
       </div>
     </xmp>
-        <div class="mason three two-phone">
-          <div class="item">
-            <h5>Widescreen (16:9)</h5>
-            <div class="embed widescreen">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/Ia9uXumYrXQ"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
+          <div class="mason three two-phone">
+            <div class="item">
+              <h5>Widescreen (16:9)</h5>
+              <div class="embed widescreen">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/Ia9uXumYrXQ"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="item">
+              <h5>SD (4:3)</h5>
+              <div class="embed sd">
+                <iframe
+                  width="420"
+                  height="315"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="item">
+              <h5>Phone (9:16)</h5>
+              <div class="embed phone">
+                <iframe
+                  src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fgeracaomonarquia%2Fvideos%2F209006036180794%2F&show_text=0&width=400"
+                  width="400"
+                  height="400"
+                  style="border: none; overflow: hidden"
+                  scrolling="no"
+                  frameborder="0"
+                  allowTransparency="true"
+                  allowfullscreen="true"
+                ></iframe>
+              </div>
+            </div>
+            <div class="item">
+              <h5>Cinema (2:35/1)</h5>
+              <div class="embed cinema-wide">
+                <iframe
+                  width="640"
+                  height="360"
+                  src="http://cache.vevo.com/assets/html/embed.html?video=GB1101500747"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="item">
+              <h5>Square (1:1)</h5>
+              <div class="embed square">
+                <iframe
+                  src="https://vine.co/v/i15Am1uba61/embed/simple"
+                  width="480"
+                  height="480"
+                  frameborder="0"
+                ></iframe>
+                <script src="https://platform.vine.co/static/scripts/embed.js"></script>
+              </div>
             </div>
           </div>
-          <div class="item">
-            <h5>SD (4:3)</h5>
-            <div class="embed sd">
-              <iframe
-                width="420"
-                height="315"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-          <div class="item">
-            <h5>Phone (9:16)</h5>
-            <div class="embed phone">
-              <iframe
-                src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fgeracaomonarquia%2Fvideos%2F209006036180794%2F&show_text=0&width=400"
-                width="400"
-                height="400"
-                style="border: none; overflow: hidden;"
-                scrolling="no"
-                frameborder="0"
-                allowTransparency="true"
-                allowfullscreen="true"
-              ></iframe>
-            </div>
-          </div>
-          <div class="item">
-            <h5>Cinema (2:35/1)</h5>
-            <div class="embed cinema-wide">
-              <iframe
-                width="640"
-                height="360"
-                src="http://cache.vevo.com/assets/html/embed.html?video=GB1101500747"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-          <div class="item">
-            <h5>Square (1:1)</h5>
-            <div class="embed square">
-              <iframe
-                src="https://vine.co/v/i15Am1uba61/embed/simple"
-                width="480"
-                height="480"
-                frameborder="0"
-              ></iframe>
-              <script src="https://platform.vine.co/static/scripts/embed.js"></script>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </article>
     </main>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
-      html::-webkit-scrollbar,
-      pre::-webkit-scrollbar {
-        background-color: #000;
-      }
-
-      html::-webkit-scrollbar-thumb,
-      pre::-webkit-scrollbar-thumb {
-        background-color: #fff;
-        border-radius: 50px;
-      }
-
-      html::-webkit-scrollbar-thumb:hover {
-        background-color: #ccc;
-        border-radius: 50px;
-      }
-
-      body {
-        margin: 0;
-        font-family: "PT Sans", Arial, Helvetica, sans-serif;
-        font-size: 14pt;
-      }
-
-      h1 {
-        font-size: 3.4em;
-        text-align: center;
-      }
-
-      h3 {
-        font-size: 2em;
-      }
-
-      code {
-        background-color: #eee;
-        padding: 0.2em 0.5em;
-        border-radius: 0.2em;
-      }
-
-      main {
-        max-width: 60em;
-        margin: auto;
-      }
-
-      hr {
-        border: 0;
-        border-top: 1px dashed #ccc;
-        margin: 4ch;
-      }
-
-      xmp {
-        background-color: #000;
-        color: #ccc;
-        padding: 2em 0;
-        border-radius: 0.5em;
-        position: relative;
-        font-size: 0.9em;
-        margin-bottom: 4em;
-        overflow-x: scroll;
-      }
-
-      .content {
-        background: linear-gradient(0deg, #aa3a3a, #bd4040);
-        border-radius: 0.3em;
-        padding: 1em;
-        color: #fff;
-      }
-
-      .content p {
-        font-size: 0.8em;
-        opacity: 0.5;
-      }
-
-      .grid-demo .columns {
-        border-radius: 6px;
-        margin-bottom: 10px;
-        overflow: hidden;
-      }
-
-      .grid-demo .columns .item {
-        align-content: center;
-        background: linear-gradient(0deg, #aa3a3a, #bd4040);
-        color: #fff;
-        font-size: 0.8em;
-        line-height: 2.5em;
-        min-height: 2.5em;
-        outline: 6px solid #fff;
-        text-align: center;
-        transition: all 0.5s linear;
-      }
-
-      .grid-demo .columns .item:hover {
-        background: #000;
-        color: #fff;
-      }
-
-      .grid-demo .columns .item .columns { 
-        border-top: 5px solid #fff;
-        border-bottom: 5px solid #fff;
-        border-radius: 0;
-      }
-
-      .inception div {
-        padding: 0 !important;
-      }
-
-      .position-demo {
-        background: #f8f8f8;
-        border-bottom: 6px solid #000;
-        border-top: 6px solid #000;
-      }
-
-      .position-demo .stuff {
-        background: #fff;
-        padding: 1em;
-        max-width: 13em;
-      }
-
-      .block {
-        height: 400px;
-      }
-    </style>
   </body>
 </html>
