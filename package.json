@@ -8,10 +8,10 @@
   },
   "dependencies": {
     "clean-css-cli": "^4.3.0",
-    "node-sass": "^4.14.1"
+    "sass": "^1.34.1"
   },
   "scripts": {
-    "compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/grade.scss dist/grade.css",
+    "compile": "sass --style=expanded src/grade.scss dist/grade.css",
     "minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/grade.min.css dist/grade.css",
     "dist": "npm run compile && npm run minify"
   },

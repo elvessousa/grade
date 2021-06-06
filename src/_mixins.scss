@@ -11,6 +11,7 @@
 //  - Mason
 //
 // ----------------------------------------------------------------------
+@use 'sass:math';
 
 // ----------------------------------------------------
 // Prefixes
@@ -127,7 +128,7 @@
   @for $i from 0 to length($numbers) {
     $class: unquote(nth($numbers, $i + 1));
     $fclass: unquote(nth($fraction, $i + 1));
-    $width: 100 / ($i + 1);
+    $width: math.div(100, $i + 1);
     $unit: '%';
     $suffix: '';
 
@@ -148,7 +149,7 @@
 
       .#{$fclass}#{$suffix} {
         @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}) !important);
-        padding: $gutter / 2;
+        padding: $gutter * 0.5;
       }
 
       &.stretch {
