@@ -33,6 +33,12 @@ h3 {
   margin: 0 0 0.5em 0;
 }
 
+a {
+  color: #aa3a3a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 code {
   background-color: #eee;
   padding: 0.2em 0.5em;
@@ -63,6 +69,11 @@ small {
   opacity: 0.7;
 }
 
+footer {
+  text-align: center;
+  font-size: 0.9em;
+}
+
 xmp {
   background-color: #000;
   color: #ccc;
@@ -90,6 +101,7 @@ xmp {
   border-radius: 6px;
   margin-bottom: 10px;
   overflow: hidden;
+  gap: 0;
 }
 
 .grid-demo .columns .item {

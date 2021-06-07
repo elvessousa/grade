@@ -7,11 +7,11 @@
     box-sizing: border-box;
     flex-flow: row wrap;
     width: 100%;
+    gap: $gutter;
 
     > * {
-      @include flex(1, 1, 0);
+      @include flex(1, 0, 0);
       box-sizing: border-box;
-      margin-right: $gutter;
       width: 0;
 
       &:last-child {
@@ -31,7 +31,7 @@
 
     &.stretch {
       > * {
-        flex-grow: 1;
+        flex: 1 1;
       }
     }
   }
