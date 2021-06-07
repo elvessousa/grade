@@ -1,0 +1,38 @@
+.grade {
+  // ----------------------------------------------------
+  // Columns
+  // ----------------------------------------------------
+  .#{$col-slug} {
+    @include flexbox;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+    width: 100%;
+    gap: $gutter;
+
+    > * {
+      @include flex(1, 0, 0);
+      box-sizing: border-box;
+      width: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    > li {
+      list-style: none;
+    }
+
+    &.no-gutter {
+      > * {
+        margin-right: 0;
+      }
+    }
+
+    &.stretch {
+      > * {
+        flex: 1 1;
+      }
+    }
+  }
+}

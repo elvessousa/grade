@@ -1,0 +1,23 @@
+.grade {
+  // ----------------------------------------------------
+  // Masonry
+  // ----------------------------------------------------
+  .#{$mason-slug} {
+    .item {
+      box-sizing: border-box;
+      column-gap: $gutter * 0.5;
+      display: inline-block;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &.no-gutter {
+      .item {
+        column-gap: 0;
+      }
+    }
+  }
+}

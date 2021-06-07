@@ -1,0 +1,204 @@
+// -----------------------------------------------------------------------
+//
+//  FUNCTIONS
+//  Creates the functions used in the styles.
+//  Make sure you know what you're doing before altering this code.
+//
+//  - Prefixes
+//  - Visibility
+//  - Position
+//  - Size
+//  - Mason
+//
+// ----------------------------------------------------------------------
+@use 'sass:math';
+
+// ----------------------------------------------------
+// Prefixes
+// ----------------------------------------------------
+@mixin flexbox() {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($grow, $shrink, $basis) {
+  -moz-box-flex: $grow $shrink;
+  -ms-flex: $grow $shrink;
+  -webkit-box-flex: $grow $shrink;
+  -webkit-flex: $grow $shrink;
+  flex: $grow $shrink;
+  flex-basis: $basis;
+}
+@mixin order($val) {
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-box-ordinal-group: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+// ----------------------------------------------------
+// Visibility
+// ----------------------------------------------------
+@mixin responsive-visibility($class) {
+  .visible-#{$class} {
+    display: block;
+  }
+
+  table {
+    &.visible-#{$class} {
+      display: table;
+    }
+  }
+
+  tr {
+    &.visible-#{$class} {
+      display: table-row;
+    }
+  }
+
+  th,
+  td {
+    &.visible-#{$class} {
+      display: table-cell;
+    }
+  }
+
+  span,
+  small {
+    &.visible-#{$class} {
+      display: block;
+    }
+  }
+
+  a {
+    &.visible-#{$class} {
+      display: inline-block;
+    }
+  }
+}
+
+@mixin responsive-invisibility($class) {
+  $mediaclasses: phone tablet desktop;
+
+  @each $item in $mediaclasses {
+    @if $item != $class {
+      .visible-#{$item} {
+        display: none;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------
+// Position
+// ----------------------------------------------------
+@mixin pos($pos: absolute, $top: 0, $left: 0, $bottom: 0, $right: 0) {
+  bottom: $bottom;
+  left: $left;
+  position: $pos;
+  right: $right;
+  top: $top;
+}
+
+// ----------------------------------------------------
+// Size
+// ----------------------------------------------------
+@mixin size($height: auto, $width: auto) {
+  height: $height;
+  width: $width;
+}
+
+// ----------------------------------------------------
+// Mason
+// ----------------------------------------------------
+@mixin mason($count) {
+  -moz-column-count: $count;
+  -webkit-column-count: $count;
+  column-count: $count;
+}
+
+// ----------------------------------------------------
+// Generate grid columns widths
+// ----------------------------------------------------
+@mixin generate-widths($media, $numbers, $fraction, $gutter) {
+  @for $i from 0 to length($numbers) {
+    $class: unquote(nth($numbers, $i + 1));
+    $fclass: unquote(nth($fraction, $i + 1));
+    $width: math.div(100, $i + 1);
+    $unit: '%';
+    $suffix: '';
+
+    @if $media != '' {
+      $suffix: '-#{$media}';
+    }
+
+    .#{$col-slug} {
+      &.#{$class}#{$suffix} {
+        > * {
+          @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}));
+        }
+
+        &:nth-child(#{$i + 1}n) {
+          margin-right: 0;
+        }
+      }
+
+      .#{$fclass}#{$suffix} {
+        @include flex(0, 0, calc(#{$width}#{$unit} - #{$gutter}) !important);
+        padding: $gutter * 0.5;
+      }
+
+      &.stretch {
+        &.#{$class}#{$suffix} {
+          > * {
+            @include flex(1, 1, calc(#{$width}#{$unit} - #{$gutter}));
+          }
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------
+// Generate mason bricks
+// ----------------------------------------------------
+@mixin generate-bricks($media, $bricks) {
+  @for $i from 0 to length($bricks) {
+    $mclass: unquote(nth($bricks, $i + 1));
+    $suffix: '';
+
+    @if $media != '' {
+      $suffix: '-#{$media}';
+    }
+
+    .#{$mason-slug} {
+      &.#{$mclass}#{$suffix} {
+        @include mason($i + 1);
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------
+// Generate multiplier classes
+// ----------------------------------------------------
+@mixin generate-multiples($media, $multiply) {
+  @for $i from 0 to length($multiply) {
+    $mclass: unquote(nth($multiply, $i + 1));
+    $suffix: '';
+
+    @if $media != '' {
+      $suffix: '-#{$media}';
+    }
+
+    .#{$col-slug} {
+      .#{$mclass}#{$suffix} {
+        flex-grow: ($i + 1) !important;
+      }
+    }
+  }
+}

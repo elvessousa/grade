@@ -1,0 +1,52 @@
+// ----------------------------------------------------
+// Media queries
+// ----------------------------------------------------
+.grade {
+  @for $i from 0 to length($medias) {
+    $query: unquote(nth($queries, $i + 1));
+    $media: unquote(nth($medias, $i + 1));
+
+    // Default widths
+    @include generate-widths('', $numbers, $fraction, $gutter);
+    @include generate-bricks('', $bricks);
+    @include generate-multiples('', $multiply);
+
+    .hidden {
+      display: none;
+    }
+
+    // Ordering
+    .first {
+      @include order(-1);
+    }
+
+    .last {
+      @include order(1);
+    }
+
+    @media #{$query} {
+      // Visibilities for each query
+      @include responsive-visibility($media);
+      @include responsive-invisibility($media);
+
+      // Column widths
+      @include generate-widths($media, $numbers, $fraction, $gutter);
+      @include generate-bricks($media, $bricks);
+      @include generate-multiples($media, $multiply);
+
+      // Hidden
+      .hidden-#{$media} {
+        display: none;
+      }
+
+      // Ordering
+      .first-#{$media} {
+        @include order(-1);
+      }
+
+      .last-#{$media} {
+        @include order(1);
+      }
+    }
+  }
+}
